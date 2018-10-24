@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unit Tests for Blockly Blocks</title>
+    <script src="../../blockly_compressed.js"></script>
+    <script src="../../msg/js/en.js"></script>  <!-- TODO: Test messages in all languages. -->
+    <script src="../../blocks/colour.js"></script>
+    <script src="../../blocks/lists.js"></script>
+    <script src="../../blocks/logic.js"></script>
+    <script src="../../blocks/loops.js"></script>
+    <script src="../../blocks/math.js"></script>
+    <script src="../../blocks/procedures.js"></script>
+    <script src="../../blocks/text.js"></script>
+    <script src="../../blocks/variables.js"></script>
+    <script src="field_tune.js"></script>
+    <script src="test_blocks.js"></script>
+    <script>goog.require('goog.testing.jsunit');</script>
+  </head>
+  <body>
+    <div style="width: 100px;height: 100px" id="blocklyDiv"></div>
+    <xml id="toolbox" style="display: none">
+      <category name="1">
+        <block type="colour_picker"></block>
+        <block type="tune_picker"></block>
+      </category>
+    </xml>
+    <script src="logic_ternary_test.js"></script>
+    <script type="text/javascript">
+        var workspace = Blockly.inject('blocklyDiv',
+        {
+          toolbox: document.getElementById('toolbox'),
+            scrollbars: false,
+            zoom: {
+                controls: false,
+                wheel: false,
+                startScale: 1.2,
+                maxScale: 3,
+                minScale: 0.3,
+                scaleSpeed: 1.2
+            },
+//                css: false
+        });
+  // try {
+    // var block = workspace.newBlock('tune_picker');
+    
+  // } finally {
+  //   workspace.dispose();
+  // }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,426 @@
+.blocklyToolboxDiv {
+    width: 1.5rem;
+    background-color: #95e2ec;
+}
+
+.blocklyToolboxDiv .blocklyTreeRoot{
+    padding: 0 0.05rem 0 0.05rem;
+}
+
+.blocklyTreeRoot div[role=group]>div{
+    margin: 0 0 0.05rem 0;
+    background: #ffffff;
+    border-radius: 0.05rem;
+    box-shadow: 0.02rem 0.02rem 0.02rem #5f5d5d;
+    padding-left: 0.1rem;
+
+}
+
+.blocklyToolboxDiv .blocklyTreeRow {
+    height: 0.5rem;
+    padding: 0 0 0 0.1rem !important;
+    margin: 0;
+    position: relative;
+    text-align: left;
+}
+
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+    background-color: transparent;
+}
+.blocklyToolboxDiv  .blocklyTreeSelected {
+    background-color: transparent !important;
+}
+
+.blocklyToolboxDiv .blocklyTreeLabel {
+    font-size: 0.16rem;
+    line-height: 0.5rem;
+    position: absolute;
+    padding-left: 0.4rem;
+    font-weight: bold;
+}
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(1) .blocklyTreeLabel {
+    color: #4FC3F7;
+}
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(2) .blocklyTreeLabel {
+    color: #FF839E;
+}
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(3) .blocklyTreeLabel {
+    color: #72D572;
+}
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(4) .blocklyTreeLabel {
+    color: #8AD27D;
+}
+
+.blocklyToolboxDiv div[role="treeitem"] .blocklyTreeSelected .blocklyTreeLabel {
+    color: white;
+}
+
+.blocklyToolboxDiv div[role="treeitem"] span:nth-child(1)  {
+     /*display: none !important;*/
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 0.07rem;
+     background-image: none;
+ }
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(1) span:nth-child(1) {
+    background-color: #4FC3F7;
+}
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(2) span:nth-child(1) {
+     background-color: #FF839E;
+ }
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(3) span:nth-child(1) {
+    background-color: #72D572;
+}
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(4) span:nth-child(1) {
+    background-color: #8AD27D;
+}
+
+.blocklyToolboxDiv div[role="treeitem"] .blocklyTreeIcon{
+    position: absolute;
+    left: 0.15rem;
+    top: 0.1rem;
+    width: 0.3rem;
+    height: 0.3rem;
+    background-position: 0 0;
+    background-size: 0.3rem 0.3rem;
+}
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(1) .blocklyTreeIcon {
+    background-image: url(../../media/res/menu_action.png);
+}
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(2) .blocklyTreeIcon {
+    background-image: url(../../media/res/menu_control.png);
+ }
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(3) .blocklyTreeIcon {
+    background-image: url(../../media/res/menu_logic.png);
+}
+
+.blocklyToolboxDiv div[role="treeitem"]:nth-child(4) .blocklyTreeIcon {
+    background-image: url(../../media/res/menu_new.png);
+}
+
+.blocklyToolboxDiv .blocklyTreeSelected span:nth-child(1) {
+    animation:menuItemShow 0.2s;
+    animation-fill-mode: forwards;
+    z-index: 0;
+}
+
+.blocklySvg {
+    background-color: #C1E6FC;
+}
+
+.blocklyFlyoutBackground {
+    fill: #ffffff
+}
+
+@keyframes menuItemShow
+{
+    from {width: 0.07rem;}
+    to {width:100%;border-radius: 0 0.05rem 0.05rem 0}
+}
+
+.blocklyFlyoutButton {
+    fill: #57BEF6;
+}
+
+#dialog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    right: 0;
+    top: 0;
+    display: none;
+    overflow: visible !important;
+    z-index: 100000;
+}
+
+/* #dialogBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: r
+} */
+
+#cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.dialog.hide {
+    display: none;
+}
+
+.dialog.show {
+    display: block;
+}
+
+#dialog table {
+    /* border-spacing: 0; */
+    /* border-collapse: collapse; */
+}
+
+#drawingBoard {
+    width: 4.59rem;
+    margin: 0 auto;
+    height: 3rem;
+    padding: 0rem 0.6rem;
+    background-color: #e1f7ff;
+    border: 0.055rem solid white;
+    border-radius: 0.1rem;
+    position: relative;
+}
+
+#drawingBoard .title {
+    text-align: center;
+    margin: 0;
+    font-size: 0.16rem;
+}
+
+#drawingBoard ul {
+    text-align: center;
+    margin: 0;
+}
+
+#drawingBoard li {
+    overflow: hidden;
+    margin: 0.05rem 0;
+}
+
+#drawingBoard ul li a {
+    display: block;
+    float: left;
+    width: 0.24rem;
+    height: 0.24rem;
+    margin-right: 0.05rem;
+}
+
+#drawingBoard ul li a:last-child {
+    margin-right: 0rem;
+}
+
+.drawTool {
+    position: absolute;
+    right: 0;
+    top: 0.32rem;
+    width: 0.55rem;
+}
+
+.drawTool a {
+    display: block;
+    width: 0.55rem;
+    height: 0.25rem;
+    margin: 0.1rem 0;
+    border: 1px solid #e0e0e1;
+    border-radius: 0.05rem;
+    font-size: 0.16rem;
+    text-align: center;
+    line-height: 0.25rem;
+    background: -webkit-linear-gradient(#f8f8f8, #dedede); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#f8f8f8, #dedede); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#f8f8f8, #dedede); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#f8f8f8, #dedede); /* 标准的语法 */
+}
+
+.drawMenu {
+    width: 3rem;
+    margin: 0.12rem auto 0;
+}
+
+.drawMenu a {
+    width: 1.4rem;
+    height: 0.25rem;
+    border: 1px solid #e0e0e1;
+    border-radius: 0.05rem;
+    font-size: 0.16rem;
+    line-height: 0.25rem;
+    text-align: center;
+    background: -webkit-linear-gradient(#f8f8f8, #dedede); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#f8f8f8, #dedede); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#f8f8f8, #dedede); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#f8f8f8, #dedede); /* 标准的语法 */
+}
+
+#drawCancel {
+    float: left;
+}
+
+#drawConfirm {
+    float: right;
+}
+
+#beepSelect {
+    background: #ffffff;
+    width: 6.2rem;
+    margin: 0 auto;
+    border-radius: 0.1rem;
+    padding: 0.2rem;
+}
+
+#beepSelect li {
+    overflow: hidden;
+    margin: 0 0 0.1rem 0;
+}
+
+#beepSelect li:last-child {
+    margin-bottom: 0;
+}
+
+#beepSelect li a {
+    width: 0.8rem;
+    height: 0.80rem;
+    padding: 0;
+    border-radius: 0.1rem;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 0.30rem;
+    color: #ffffff;
+    float: left;
+    margin-right: 0.1rem;
+    line-height: 0.8rem;
+    text-align: center;
+}
+
+#beepSelect li a:last-child {
+    margin-right: 0;
+}
+
+.logo {
+    margin: 0.1rem auto 0;
+    display: block;
+    width: 90%;
+}
+
+#teleControlSelect {
+    background: #ffffff;
+    width: 1.25rem;
+    margin: 0 auto;
+    border-radius: 0.1rem;
+    padding: 0.1rem;
+}
+
+#teleControlSelect li {
+    overflow: hidden;
+    margin-bottom: 0.1rem;
+}
+
+#teleControlSelect li:last-child {
+    margin-bottom: 0;
+}
+
+#teleControlSelect a {
+    display: block;
+    width: 0.35rem;
+    height: 0.35rem;
+    border: none;
+    border-radius: 0.175rem;
+    font-size: 0.20rem;
+    font-weight: bold;
+    padding: 0;
+    float: left;
+    margin-right: 0.1rem;
+    line-height: 0.35rem;
+    text-align: center;
+}
+
+#teleControlSelect a:last-child {
+    margin-right: 0;
+}
+
+#teleControlSelect a img {
+    display: block;
+    margin: 0.05rem auto 0;
+    width: 0.25rem;
+}
+
+#programDialog {
+    width: 4rem;
+    margin: 0 auto;
+    height: 3rem;
+    padding: 0.1rem 0.2rem;
+    background-color: #e1f7ff;
+    border: 5px solid white;
+    border-radius: 0.1rem;
+    position: relative;
+}
+
+#resetProgram {
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #0ab5ff;
+    width: 4rem;
+    color: white;
+    font-weight: bold;
+    font-size: 0.26rem;
+    border-radius: 0.1rem;
+    background-color: #6ad2ff;
+}
+
+#addProgram {
+    display: block;
+    width: 4rem;
+    height: 0.6rem;
+    border: 5px dotted #000000;
+    margin: 0.1rem auto;
+}
+
+#addProgram img{
+    display: block;
+    margin: 0 auto;
+    width: 0.4rem;
+}
+
+#programList li {
+    border: 5px solid #677172;
+    height: 0.6rem;
+    font-size: 0.28rem;
+    font-weight: bold;
+    line-height: 0.6rem;
+    position: relative;
+}
+
+#programList li span {
+    padding-left: 0.1rem;
+}
+
+#programList li button {
+    width: 0.6rem;
+    height: 100%;
+    position: absolute;
+}
+
+#programList li button.modify_program {
+    right: 0.6rem;
+}
+
+#programList li button.delete_program {
+    right: 0px;
+}
+
+#programList li button img {
+    vertical-align: middle;
+    width: 0.4rem;
+}
+
+button.close {
+    display: block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-image: url("../../media/res/close.png");
+    background-size: 0.4rem 0.4rem;
+    position: absolute;
+    right: -0.2rem;
+    top: -0.2rem;
+}
