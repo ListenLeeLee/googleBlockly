@@ -75,6 +75,7 @@ DemoApp.addEventListener = function () {
 
       let programListButton = document.getElementById("listButton");
       programListButton.addEventListener("touchend", function(){
+        DemoApp.programList.initList(DemoApp.programList.data);
         DemoApp.showDialog("programDialog")
       });
 
@@ -89,6 +90,11 @@ DemoApp.addEventListener = function () {
       let drawCancel = document.getElementById("drawCancel");
       drawCancel.addEventListener("touchend", function(){
         DemoApp.hideDialog('drawingBoard');
+      });
+
+      let newProgram = document.getElementById("newProgram");
+      newProgram.addEventListener("touchend", function(){
+        DemoApp.programList.saveProgram();
       });
 };
 
@@ -382,6 +388,77 @@ DemoApp.drawBoard = {
         block.setFieldValue(data, "EMOJI")
         DemoApp.hideDialog("drawingBoard");
     },
+};
+
+DemoApp.programList = {
+    init: function () {
+        let dataStr = '<xml id="startBlocks" style="display: none">'+
+        '<block x="200" y="10" type="telecontroller"></block></xml>program'+
+        '<xml id="startBlocks" style="display: none">'+
+        '<block x="200" type="d_c_generator_roll_with_speed"></block></xml>';
+        DemoApp.programList.data = dataStr.split("program");
+    },
+
+    initList: function (data) {
+        let programList = document.getElementById("programList");
+        programList.innerHTML = "";
+        for(let i=0; i<data.length; i++) {
+            let li = document.createElement("li");
+            programList.appendChild(li);
+            let span = document.createElement("span");
+            span.innerText = "文件" + i;
+            li.appendChild(span);
+            let modifyButton = document.createElement("button");
+            modifyButton.className = "modify_program";
+            li.appendChild(modifyButton);
+            let modifyIcon = document.createElement("img");
+            modifyIcon.setAttribute("src", "../../media/res/pen.png");
+            modifyIcon.setAttribute("width", 40);
+            modifyButton.appendChild(modifyIcon);
+
+            let deleteButton = document.createElement("button");
+            deleteButton.className = "delete_program";
+            li.appendChild(deleteButton);
+            let deleteIcon = document.createElement("img");
+            deleteIcon.setAttribute("src", "../../media/res/trashcan.png");
+            deleteIcon.setAttribute("width", 40);
+            deleteButton.appendChild(deleteIcon);
+
+            modifyButton.addEventListener("touchend", function () {
+                    DemoApp.programList.onModifity(i);
+                }
+            );
+
+            deleteButton.addEventListener("touchend", function () {
+                    DemoApp.programList.onDelete(i);
+                }
+            )
+        }  
+    },
+
+    onModifity: function (index) {
+        console.log(index, DemoApp.programList.data[index]);
+        DemoApp.workSpace.clear();
+        let dom = Blockly.Xml.textToDom(DemoApp.programList.data[index]);
+        Blockly.Xml.domToWorkspace(dom,
+            DemoApp.workSpace);
+        DemoApp.hideDialog("programDialog");  
+    },
+
+    onDelete: function (index) {
+        console.log(index);
+        DemoApp.programList.data.splice(index, 1);
+        DemoApp.programList.initList(DemoApp.programList.data);
+    },
+
+    saveProgram: function () {
+        let program = Blockly.Xml.workspaceToDom(DemoApp.workSpace, true);
+        let text = Blockly.Xml.domToText(program);
+        console.log("saveProgram" + Blockly.Xml.domToText(program));
+        DemoApp.programList.data.push(text);
+        DemoApp.hideDialog("programNameDialog");
+    },
 }
 
 DemoApp.drawBoard.init();
+DemoApp.programList.init();

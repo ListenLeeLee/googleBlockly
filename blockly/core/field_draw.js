@@ -75,7 +75,7 @@ Blockly.FieldDraw = function(menuGenerator, opt_validator) {
         }
         this.setEmoji();
     }
-    this.textElement_.style.opacity = 0;
+    this.textElement_.style.display = "none";
 
     this.updateWidth();
   };
