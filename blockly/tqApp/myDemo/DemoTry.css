@@ -368,7 +368,7 @@
     background-color: #6ad2ff;
 }
 
-#addProgram {
+#newProgram {
     display: block;
     width: 4rem;
     height: 0.6rem;
@@ -376,7 +376,7 @@
     margin: 0.1rem auto;
 }
 
-#addProgram img{
+#newProgram img{
     display: block;
     margin: 0 auto;
     width: 0.4rem;

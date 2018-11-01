@@ -2,6 +2,9 @@
 var currentBlock;
 var DemoApp = {};
 DemoApp.startScale = window.clientZoom*0.9;
+DemoApp.startProgram = '<xml id="startBlocks" style="display: none">'+
+'<block x="200" y="10" type="telecontroller"></block></xml>';
+DemoApp.startProgramName = "initialProgram";
 DemoApp.initApplication = function () {
     var demoWorkspace = Blockly.inject('blocklyDiv',
         {
@@ -28,11 +31,9 @@ DemoApp.initData = function () {
 };
 
 DemoApp.initStartBlocks = function () {
-    // Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
-    //     this.workSpace);
+    let dom = Blockly.Xml.textToDom(this.startProgram);
+    this.currentProgram = "";
 
-    let dom = Blockly.Xml.textToDom('<xml id="startBlocks" style="display: none">'+
-    '<block x="200" y="10" type="telecontroller"></block></xml>');
     Blockly.Xml.domToWorkspace(dom,
         this.workSpace);
 };
@@ -73,14 +74,12 @@ DemoApp.addEventListener = function () {
         e.preventDefault();  // Stop double-clicking from selecting text.
       });
 
-      let programListButton = document.getElementById("listButton");
-      programListButton.addEventListener("touchend", function(){
-        DemoApp.programList.initList(DemoApp.programList.data);
-        DemoApp.showDialog("programDialog")
-      });
-
       let programSaveButton = document.getElementById("saveButton");
       programSaveButton.addEventListener("touchend", function(){
+        if (DemoApp.currentProgram && DemoApp.currentProgram != "") {
+            var newProgramName = document.getElementById("newProgramName");
+            newProgramName.value = DemoApp.currentProgram;
+        }
         DemoApp.showDialog("programNameDialog")
       });
 
@@ -90,11 +89,6 @@ DemoApp.addEventListener = function () {
       let drawCancel = document.getElementById("drawCancel");
       drawCancel.addEventListener("touchend", function(){
         DemoApp.hideDialog('drawingBoard');
-      });
-
-      let newProgram = document.getElementById("newProgram");
-      newProgram.addEventListener("touchend", function(){
-        DemoApp.programList.saveProgram();
       });
 };
 
@@ -392,72 +386,191 @@ DemoApp.drawBoard = {
 
 DemoApp.programList = {
     init: function () {
-        let dataStr = '<xml id="startBlocks" style="display: none">'+
-        '<block x="200" y="10" type="telecontroller"></block></xml>program'+
-        '<xml id="startBlocks" style="display: none">'+
-        '<block x="200" type="d_c_generator_roll_with_speed"></block></xml>';
-        DemoApp.programList.data = dataStr.split("program");
+        var self = this;
+        var programListButton = document.getElementById("listButton");
+        programListButton.addEventListener("touchend", function(){
+            self.showList(); 
+        });
+
+        var addProgram = document.getElementById("addProgram");
+        addProgram.addEventListener("touchend", function(){
+            var newProgramName = document.getElementById("newProgramName");
+            var name = newProgramName.value;
+            self.saveProgram(name);
+        });
+
+        var resetProgram = document.getElementById("resetProgram");
+        resetProgram.addEventListener("touchend", function(){
+            self.initStartBlocks();
+        });
+
+        var newProgram = document.getElementById("newProgram");
+        newProgram.addEventListener("touchend", function(){
+            self.newProgram();
+        });
+    },
+
+    showList: function () {
+        this.onGetKeyCallback = function (key, value) {
+            this.initList(value);
+            DemoApp.showDialog("programDialog");
+        }
+        
+        this.getProgramNames();
     },
 
     initList: function (data) {
-        let programList = document.getElementById("programList");
+        var self = this;
+        var programList = document.getElementById("programList");
         programList.innerHTML = "";
-        for(let i=0; i<data.length; i++) {
-            let li = document.createElement("li");
+        for(var i=0; i<data.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("programName", data[i]);
             programList.appendChild(li);
-            let span = document.createElement("span");
-            span.innerText = "文件" + i;
+            var span = document.createElement("span");
+            span.innerText = "文件" + data[i];
             li.appendChild(span);
-            let modifyButton = document.createElement("button");
+            var modifyButton = document.createElement("button");
             modifyButton.className = "modify_program";
             li.appendChild(modifyButton);
-            let modifyIcon = document.createElement("img");
+            var modifyIcon = document.createElement("img");
             modifyIcon.setAttribute("src", "../../media/res/pen.png");
             modifyIcon.setAttribute("width", 40);
             modifyButton.appendChild(modifyIcon);
 
-            let deleteButton = document.createElement("button");
+            var deleteButton = document.createElement("button");
             deleteButton.className = "delete_program";
             li.appendChild(deleteButton);
-            let deleteIcon = document.createElement("img");
+            var deleteIcon = document.createElement("img");
             deleteIcon.setAttribute("src", "../../media/res/trashcan.png");
             deleteIcon.setAttribute("width", 40);
             deleteButton.appendChild(deleteIcon);
 
             modifyButton.addEventListener("touchend", function () {
-                    DemoApp.programList.onModifity(i);
+                    var name = this.parentElement.getAttribute("programName");
+                    self.onModifity(name);
                 }
             );
 
             deleteButton.addEventListener("touchend", function () {
-                    DemoApp.programList.onDelete(i);
+                    var name = this.parentElement.getAttribute("programName");
+                    self.onDelete(name);
                 }
             )
         }  
     },
 
-    onModifity: function (index) {
-        console.log(index, DemoApp.programList.data[index]);
+    onModifity: function (name) {
         DemoApp.workSpace.clear();
-        let dom = Blockly.Xml.textToDom(DemoApp.programList.data[index]);
-        Blockly.Xml.domToWorkspace(dom,
-            DemoApp.workSpace);
-        DemoApp.hideDialog("programDialog");  
+
+        this.onGetKeyCallback = function (key, value) {
+            var dom = Blockly.Xml.textToDom(value);
+            Blockly.Xml.domToWorkspace(dom,
+                DemoApp.workSpace);
+            DemoApp.currentProgram = key;
+            DemoApp.hideDialog("programDialog");
+        };
+        
+        this.getProgram(name);
     },
 
-    onDelete: function (index) {
-        console.log(index);
-        DemoApp.programList.data.splice(index, 1);
-        DemoApp.programList.initList(DemoApp.programList.data);
+    onDelete: function (name) {
+        this.onGetKeyCallback = function (key, value) {
+            var matchIndex;
+            var matchValue;
+            for(var i=0; i<value.length; i++) {
+                if (value[i] == name) {
+                    matchIndex = i;
+                    matchValue = value[i];
+                    break;
+                }
+            }
+
+            if (matchIndex >= 0) {
+                value.splice(matchIndex, 1);
+                var namesStr = "";
+                for(var i=0; i<value.length; i++) {
+                    var nameStr = i == value.length - 1 ? value[i] : value[i] + ";";
+                    namesStr += nameStr;
+                }
+                this.saveKey("tqProgramNames", namesStr);
+                this.deleteKey(matchValue);
+                this.initList(value);
+            }
+        }
+
+        this.getProgramNames();
     },
 
-    saveProgram: function () {
-        let program = Blockly.Xml.workspaceToDom(DemoApp.workSpace, true);
-        let text = Blockly.Xml.domToText(program);
-        console.log("saveProgram" + Blockly.Xml.domToText(program));
-        DemoApp.programList.data.push(text);
-        DemoApp.hideDialog("programNameDialog");
+    saveProgram: function (name) {
+        if (name) {
+            var program = Blockly.Xml.workspaceToDom(DemoApp.workSpace, true);
+            var text = Blockly.Xml.domToText(program);
+            // console.log("saveProgram" + Blockly.Xml.domToText(program));
+
+            this.onGetKeyCallback = function (key, value) {
+                value.push(name);
+                var namesStr = "";
+                for(var i=0; i<value.length; i++) {
+                    var nameStr = i == value.length - 1 ? value[i] : value[i] + ";";
+                    namesStr += nameStr;
+                }
+                this.saveKey("tqProgramNames", namesStr);
+
+                this.saveKey("tqProgram" + name, text);
+                DemoApp.hideDialog("programNameDialog");
+            },
+
+            this.getProgramNames();    
+        }
     },
+
+    newProgram: function () {
+        DemoApp.workSpace.clear();
+        DemoApp.hideDialog("programDialog");
+    },
+
+    getProgramNames: function () {
+        this.getKey("tqProgramNames");
+    },
+
+    getProgram: function (key) {
+        this.getKey(key);
+    },
+
+    getKey: function (key) {
+        window.android.getStr(key);
+        // var value;
+        // if (key == "tqProgramNames") {
+        //     value = "hello";
+        // } else {
+        //     value = '<xml id="startBlocks" style="display: none">'+
+        //     '<block x="200" y="10" type="telecontroller"><field name="NAME">2</field></block></xml>'
+        // }
+        
+        // this.onGetKey(key, value);
+    },
+
+    onGetKey: function (key, value) {
+        if (key == "tqProgramNames") {
+            if (value && value != "") {
+                value = value.split(";");
+            } else {
+                value = [];
+            }
+        }
+        if (this.onGetKeyCallback) {
+            this.onGetKeyCallback.call(this, key, value);
+        }
+    },
+
+    saveKey: function (key, value) {
+        window.android.saveStr(key, value);
+    },
+
+    deleteKey: function (key) {
+        window.android.deleteStr(key);
+    }
 }
 
 DemoApp.drawBoard.init();
