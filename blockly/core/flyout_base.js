@@ -417,7 +417,7 @@ Blockly.Flyout.prototype.show = function(xmlList) {
   // Look up the correct category generation function and call that to get a
   // valid XML list.
   if (typeof xmlList == 'string') {
-    var PROCEDURE = this.workspace_.targetWorkspace.getToolboxCategoryCallback(
+    var fnToApply = this.workspace_.targetWorkspace.getToolboxCategoryCallback(
         xmlList);
     goog.asserts.assert(goog.isFunction(fnToApply),
         'Couldn\'t find a callback function when opening a toolbox category.');
