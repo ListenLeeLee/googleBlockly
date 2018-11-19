@@ -382,6 +382,11 @@
     width: 0.4rem;
 }
 
+.programBox {
+    overflow: scroll;
+    height: 1.8rem;
+}
+
 #programList li {
     border: 5px solid #677172;
     height: 0.6rem;

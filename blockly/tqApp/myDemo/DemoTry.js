@@ -494,7 +494,7 @@ DemoApp.programList = {
                     namesStr += nameStr;
                 }
                 this.saveKey("tqProgramNames", namesStr);
-                this.deleteKey(matchValue);
+                this.deleteKey("tqProgram"+matchValue);
                 this.initList(value);
             }
         }
@@ -545,7 +545,7 @@ DemoApp.programList = {
         window.android.getStr(key);
         // var value;
         // if (key == "tqProgramNames") {
-        //     value = "hello";
+        //     value = "hello;1;2;3;4;5";
         // } else {
         //     value = '<xml id="startBlocks" style="display: none">'+
         //     '<block x="200" y="10" type="telecontroller"><field name="NAME">2</field></block></xml>'
