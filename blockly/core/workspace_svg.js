@@ -116,6 +116,11 @@ Blockly.WorkspaceSvg = function(options, opt_blockDragSurface, opt_wsDragSurface
     this.registerToolboxCategoryCallback(Blockly.PROCEDURE_CATEGORY_NAME,
         Blockly.Procedures.flyoutCategory);
   }
+
+  if (Blockly.Command && Blockly.Command.flyoutCategory) {
+    this.registerToolboxCategoryCallback(Blockly.COMMAND_CATEGORY_NAME,
+      Blockly.Command.flyoutCategory);
+  }
 };
 goog.inherits(Blockly.WorkspaceSvg, Blockly.Workspace);
 

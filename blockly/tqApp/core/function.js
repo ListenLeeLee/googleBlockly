@@ -1,5 +1,5 @@
 goog.provide('Blockly.Function');
-console.log(Blockly.Function);
+// console.log(Blockly.Function);
 
 Blockly.Function.flyoutCategory = function(workspace) {
     var xmlList = [];

@@ -299,7 +299,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.NEW_COLOUR_VARIABLE = "创建颜色变量...";
 /** @export */ Blockly.Msg.NEW_NUMBER_VARIABLE = "创建数字变量...";
 /** @export */ Blockly.Msg.NEW_STRING_VARIABLE = "创建字符串变量...";
-/** @export */ Blockly.Msg.NEW_VARIABLE = "创建变量...";
+/** @export */ Blockly.Msg.NEW_VARIABLE = "新建变量";
 /** @export */ Blockly.Msg.NEW_VARIABLE_TITLE = "新变量的名称：";
 /** @export */ Blockly.Msg.NEW_VARIABLE_TYPE_TITLE = "新变量名称：";
 /** @export */ Blockly.Msg.ORDINAL_NUMBER_SUFFIX = "空白";

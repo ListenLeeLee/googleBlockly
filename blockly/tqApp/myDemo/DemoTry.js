@@ -44,7 +44,11 @@ DemoApp.addEventListener = function () {
         Blockly.Python.INFINITE_LOOP_TRAP = null;
         var code = Blockly.Python.workspaceToCode(DemoApp.workSpace);
         // console.log(code)
-        window.android.writeToDevice(code);
+        if (window.os == "iOS") {
+            window.webkit.messageHandlers.writeToDevice.postMessage({code: code})
+        } else if (window.os == "AndroidOS") {
+            window.android.writeToDevice(code);
+        }
     }
     var generateButton = document.getElementById("generateButton");
     generateButton.addEventListener("click", showCode);
@@ -542,7 +546,11 @@ DemoApp.programList = {
         if (key !=  "tqProgramNames") {
             key = "tqProgram" + key;
         }
-        window.android.getStr(key);
+        if (window.os == "iOS") {
+            window.webkit.messageHandlers.getStr.postMessage({key: key})
+        } else if (window.os == "AndroidOS") {
+            window.android.getStr(key);
+        }
         // var value;
         // if (key == "tqProgramNames") {
         //     value = "hello;1;2;3;4;5";
@@ -550,7 +558,7 @@ DemoApp.programList = {
         //     value = '<xml id="startBlocks" style="display: none">'+
         //     '<block x="200" y="10" type="telecontroller"><field name="NAME">2</field></block></xml>'
         // }
-        this.onGetKey(key, value);
+        // this.onGetKey(key, value);
     },
 
     onGetKey: function (key, value) {
@@ -567,11 +575,19 @@ DemoApp.programList = {
     },
 
     saveKey: function (key, value) {
-        window.android.saveStr(key, value);
+        if (window.os == "iOS") {
+            window.webkit.messageHandlers.saveStr.postMessage({key: key, value: value})
+        } else if (window.os == "AndroidOS") {
+            window.android.saveStr(key, value);
+        }
     },
 
     deleteKey: function (key) {
-        window.android.deleteStr(key);
+        if (window.os == "iOS") {
+            window.webkit.messageHandlers.deleteStr.postMessage({key: key})
+        } else if (window.os == "AndroidOS") {
+            window.android.deleteStr(key);
+        }
     }
 }
 
