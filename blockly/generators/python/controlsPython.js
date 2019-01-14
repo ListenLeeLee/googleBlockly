@@ -14,7 +14,10 @@ Blockly.Python['controls_wait'] = function(block) {
 };
 
 Blockly.Python['controls_wait_until'] = function(block) {
-    var code = 'waitUntil';
+    var argument0 = Blockly.Python.valueToCode(block, 'BOOL', Blockly.Python.ORDER_LOGICAL_NOT) || 'False';
+    var branch = Blockly.Python.addLoopTrap(branch, block.id) ||
+        Blockly.Python.PASS;
+    var code = 'while not '+argument0+":\n" + branch;
 
     code = code + '\n';
     return code;

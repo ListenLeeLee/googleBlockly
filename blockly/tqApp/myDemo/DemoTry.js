@@ -2,8 +2,7 @@
 var currentBlock;
 var DemoApp = {};
 DemoApp.startScale = window.clientZoom*0.9;
-DemoApp.startProgram = '<xml id="startBlocks" style="display: none">'+
-'<block x="200" y="10" type="telecontroller"></block></xml>';
+DemoApp.startProgram = '';
 DemoApp.startProgramName = "initialProgram";
 DemoApp.initApplication = function () {
     var demoWorkspace = Blockly.inject('blocklyDiv',
@@ -43,7 +42,7 @@ DemoApp.addEventListener = function () {
     function showCode () {
         Blockly.Python.INFINITE_LOOP_TRAP = null;
         var code = Blockly.Python.workspaceToCode(DemoApp.workSpace);
-        // console.log(code)
+        console.log(code)
         if (window.os == "iOS") {
             window.webkit.messageHandlers.writeToDevice.postMessage({code: code})
         } else if (window.os == "AndroidOS") {
@@ -94,6 +93,22 @@ DemoApp.addEventListener = function () {
       drawCancel.addEventListener("touchend", function(){
         DemoApp.hideDialog('drawingBoard');
       });
+
+      let addFunction = document.getElementById("addFunction");
+      addFunction.addEventListener("touchend", function(){
+        let text = document.getElementById("newFunctionName").value;
+        if (text == "") return;
+        DemoApp.hideDialog('FunctionNameDialog', text);
+      });
+
+      let modifyProgramName = document.getElementById("modifyProgramName");
+      modifyProgramName.addEventListener("touchend", function(){
+        let text = this.parentElement.getElementsByTagName("input")[0].value;
+        if (text == "") return;
+        DemoApp.hideDialog('modifyProgramNameDialog', text);
+        DemoApp.showDialog("programDialog");
+      });
+      
 };
 
 DemoApp.initCustomBlocks = function(){
@@ -103,20 +118,25 @@ DemoApp.initCustomBlocks = function(){
     //     Blockly.Function.flyoutCategory);
 };
 
-DemoApp.showDialog = function (id, block) {
+DemoApp.showDialog = function (id, block, callback, target) {
     var dialog = document.getElementById("dialog");
     dialog.style.display = "table";
     dialog = document.getElementById(id);
     dialog.className = "dialog show";
     dialog.block = block;
+    dialog.callback = callback;
+    dialog.target = target;
 }
 
-DemoApp.hideDialog = function (id) {
+DemoApp.hideDialog = function (id, data) {
     var dialog = document.getElementById("dialog");
     dialog.style.display = "none";
     
     dialog = document.getElementById(id);
     dialog.className = "dialog hide";
+    if (dialog.callback && data) {
+        dialog.callback.call(dialog.target, data);
+    }
 }
 
 DemoApp.onBeepClick = function () {
@@ -450,22 +470,107 @@ DemoApp.programList = {
             deleteIcon.setAttribute("width", 40);
             deleteButton.appendChild(deleteIcon);
 
-            modifyButton.addEventListener("touchend", function () {
-                    var name = this.parentElement.getAttribute("programName");
-                    self.onModifity(name);
+            li.addEventListener("touchstart", function () {
+                    this.emitEvent = true;
                 }
             );
 
+            li.addEventListener("touchend", function () {
+                    if (this.emitEvent) {
+                        var name = this.getAttribute("programName");
+                        self.onModifity(name);
+                    }
+                }     
+            );
+
+            li.addEventListener("touchmove", function () {
+                    this.emitEvent = false;
+                } 
+            );
+
+            modifyButton.addEventListener("touchstart", function () {
+                this.emitEvent = true;
+                }
+            )
+            modifyButton.addEventListener("touchmove", function () {
+                    this.emitEvent = false;
+                } 
+            );
+
+            modifyButton.addEventListener("touchend", function (event) {
+                    if (this.emitEvent) {
+                        var name = this.parentElement.getAttribute("programname");
+                        console.log(name);
+                        document.getElementById("newModifyProgramName").value = name;
+                        DemoApp.hideDialog("programDialog");
+                        DemoApp.showDialog("modifyProgramNameDialog", null, function(text){
+                            console.log(text);
+                            let oldName = this.parentElement.getAttribute("programname");
+                            let newName = text;
+                            DemoApp.programList.onModifityName(oldName, newName);
+                        }, this);
+                        event.stopImmediatePropagation();
+                    }
+                }
+            )
+
+            deleteButton.addEventListener("touchstart", function () {
+                    this.emitEvent = true;
+                }
+            )
+            deleteButton.addEventListener("touchmove", function () {
+                    this.emitEvent = false;
+                } 
+            );
+
             deleteButton.addEventListener("touchend", function () {
-                    var name = this.parentElement.getAttribute("programName");
-                    self.onDelete(name);
+                    if (this.emitEvent) {
+                        var name = this.parentElement.getAttribute("programName");
+                        self.onDelete(name);
+                        event.stopImmediatePropagation();
+                    }  
                 }
             )
         }  
     },
 
+    onModifityName: function (oldName, newName) {
+        this.onGetKeyCallback = function (key, value) {
+            var matchIndex;
+            var matchValue;
+            for(var i=0; i<value.length; i++) {
+                if (value[i] == oldName) {
+                    matchIndex = i;
+                    matchValue = value[i];
+                    break;
+                }
+            }
+
+            if (matchIndex >= 0) {
+                value.splice(matchIndex, 1, newName);
+                var namesStr = "";
+                for(var i=0; i<value.length; i++) {
+                    var nameStr = i == value.length - 1 ? value[i] : value[i] + ";";
+                    namesStr += nameStr;
+                }
+                this.saveKey("tqProgramNames", namesStr);
+                this.onGetKeyCallback = function (key, value) {
+                    this.saveKey("tqProgram"+newProgram, value);
+                    this.deleteKey("tqProgram"+matchValue);
+                    this.initList(value);
+                    DemoApp.showDialog("programDialog");
+                };
+                this.getProgram(name);
+                
+            }
+        }
+
+        this.getProgramNames();
+    },
+
     onModifity: function (name) {
         DemoApp.workSpace.clear();
+        console.log("onModifity: ", name)
 
         this.onGetKeyCallback = function (key, value) {
             var dom = Blockly.Xml.textToDom(value);
@@ -519,6 +624,7 @@ DemoApp.programList = {
                     var nameStr = i == value.length - 1 ? value[i] : value[i] + ";";
                     namesStr += nameStr;
                 }
+                // console.log(namesStr, text)
                 this.saveKey("tqProgramNames", namesStr);
 
                 this.saveKey("tqProgram" + name, text);
@@ -546,19 +652,19 @@ DemoApp.programList = {
         if (key !=  "tqProgramNames") {
             key = "tqProgram" + key;
         }
-        if (window.os == "iOS") {
-            window.webkit.messageHandlers.getStr.postMessage({key: key})
-        } else if (window.os == "AndroidOS") {
-            window.android.getStr(key);
-        }
-        // var value;
-        // if (key == "tqProgramNames") {
-        //     value = "hello;1;2;3;4;5";
-        // } else {
-        //     value = '<xml id="startBlocks" style="display: none">'+
-        //     '<block x="200" y="10" type="telecontroller"><field name="NAME">2</field></block></xml>'
+        // if (window.os == "iOS") {
+        //     window.webkit.messageHandlers.getStr.postMessage({key: key})
+        // } else if (window.os == "AndroidOS") {
+        //     window.android.getStr(key);
         // }
-        // this.onGetKey(key, value);
+        var value;
+        if (key == "tqProgramNames") {
+            value = "hello;1;2;3;4;5";
+        } else {
+            value = '<xml id="startBlocks" style="display: none">'+
+            '<block x="200" y="10" type="telecontroller"><field name="NAME">2</field></block></xml>'
+        }
+        this.onGetKey(key, value);
     },
 
     onGetKey: function (key, value) {

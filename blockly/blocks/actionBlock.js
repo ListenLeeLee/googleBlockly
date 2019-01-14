@@ -27,18 +27,9 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
                 ]
             },
             {
-                "type": "field_dropdown",
+                "type": "input_value",
                 "name": "SPEED",
-                "options": [
-                    ["255", "255"],
-                    ["100", "100"],
-                    ["50", "50"],
-                    ["0", "0"],
-                    ["-50", "-50"],
-                    ["-100", "-100"],
-                    ["-255", "-255"],
-                ]
-            }
+            },
         ],
         "inputsInline": true,
         "previousStatement": null,
@@ -70,37 +61,16 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
                 ]
             },
             {
-                "type": "field_dropdown",
+                "type": "input_value",
                 "name": "COLOR_RED",
-                "options": [
-                    ["0", "0"],
-                    ["20", "20"],
-                    ["60", "60"],
-                    ["150", "150"],
-                    ["255", "255"]
-                ]
             },
             {
-                "type": "field_dropdown",
+                "type": "input_value",
                 "name": "COLOR_GREEN",
-                "options": [
-                    ["0", "0"],
-                    ["20", "20"],
-                    ["60", "60"],
-                    ["150", "150"],
-                    ["255", "255"]
-                ]
             },
             {
-                "type": "field_dropdown",
+                "type": "input_value",
                 "name": "COLOR_BLUE",
-                "options": [
-                    ["0", "0"],
-                    ["20", "20"],
-                    ["60", "60"],
-                    ["150", "150"],
-                    ["255", "255"]
-                ]
             },
         ],
         "inputsInline": true,
@@ -259,7 +229,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "args0": [
             {
                 "type": "field_image",
-                "src": "../../media/res/beep.png",
+                "src": "../../media/res/emoji.png",
                 "width": 29.5,
                 "height": 20,
                 "alt": "*"

@@ -10,6 +10,62 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly.constants');
 goog.require('Blockly.Workspace');
 goog.require('goog.string');
+Blockly.Command.createVariableButtonHandler = function(
+  workspace, opt_callback, opt_type) {
+var type = opt_type || '';
+// This function needs to be named so it can be called recursively.
+var promptAndCheckWithAlert = function(defaultName) {
+  Blockly.Command.promptName(Blockly.Msg.NEW_VARIABLE_TITLE, defaultName,
+      function(text) {
+        if (text) {
+          var existing =
+              Blockly.Variables.nameUsedWithAnyType_(text, workspace);
+          if (existing) {
+            var lowerCase = text.toLowerCase();
+            if (existing.type == type) {
+              var msg = Blockly.Msg.VARIABLE_ALREADY_EXISTS.replace(
+                  '%1', lowerCase);
+            } else {
+              var msg = Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE;
+              msg = msg.replace('%1', lowerCase).replace('%2', existing.type);
+            }
+            Blockly.alert(msg,
+                function() {
+                  promptAndCheckWithAlert(text);  // Recurse
+                });
+          } else {
+            // No conflict
+            workspace.createVariable(text, type);
+            if (opt_callback) {
+              opt_callback(text);
+            }
+          }
+        } else {
+          // User canceled prompt.
+          if (opt_callback) {
+            opt_callback(null);
+          }
+        }
+      });
+};
+promptAndCheckWithAlert('');
+};
+
+Blockly.Command.promptName = function(promptText, defaultText, callback) {
+  Blockly.prompt(promptText, defaultText, function(newVar) {
+    // Merge runs of whitespace.  Strip leading and trailing whitespace.
+    // Beyond this, all names are legal.
+    if (newVar) {
+      newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
+      if (newVar == Blockly.Msg.RENAME_VARIABLE ||
+          newVar == Blockly.Msg.NEW_VARIABLE) {
+        // Ok, not ALL names are legal...
+        newVar = null;
+      }
+    }
+    callback(newVar);
+  });
+};
 Blockly.Command.flyoutCategory = function(workspace) {
     var xmlList = [];
     var button = goog.dom.createDom('button');
@@ -21,6 +77,20 @@ Blockly.Command.flyoutCategory = function(workspace) {
     });
   
     xmlList.push(button);
+
+    // var button2 = goog.dom.createDom('button');
+    // button2.setAttribute('text', Blockly.Msg.NEW_FUNCTION);
+    // button2.setAttribute('callbackKey', 'CREATE_FUNCTION');
+  
+    // workspace.registerButtonCallback('CREATE_FUNCTION', function(button) {
+    //   // Blockly.Command.createVariableButtonHandler(button.getTargetWorkspace());
+      
+    //   DemoApp.showDialog("FunctionNameDialog", null, function () {
+    //     console.log("ppp");
+    //   }, this)
+    // });
+  
+    // xmlList.push(button2);
   
     var blockList = Blockly.Variables.flyoutCategoryBlocks(workspace);
     xmlList = xmlList.concat(blockList);

@@ -160,6 +160,11 @@ Blockly.Variables.flyoutCategoryBlocks = function(workspace) {
       var blockText = '<xml>' +
             '<block type="variables_set" gap="' + gap + '">' +
             Blockly.Variables.generateVariableFieldXmlString(firstVariable) +
+            '<value name="VALUE">' +
+          '<block type="math_number">' +
+          '<field name="NUM">1</field>' +
+          '</block>' +
+          '</value>' +
             '</block>' +
             '</xml>';
       var block = Blockly.Xml.textToDom(blockText).firstChild;
@@ -171,9 +176,9 @@ Blockly.Variables.flyoutCategoryBlocks = function(workspace) {
           '<block type="math_change" gap="' + gap + '">' +
           Blockly.Variables.generateVariableFieldXmlString(firstVariable) +
           '<value name="DELTA">' +
-          '<shadow type="math_number">' +
+          '<block type="math_number">' +
           '<field name="NUM">1</field>' +
-          '</shadow>' +
+          '</block>' +
           '</value>' +
           '</block>' +
           '</xml>';
@@ -266,9 +271,44 @@ Blockly.Variables.createVariableButtonHandler = function(
     workspace, opt_callback, opt_type) {
   var type = opt_type || '';
   // This function needs to be named so it can be called recursively.
+  // var promptAndCheckWithAlert = function(defaultName) {
+  //   Blockly.Variables.promptName(Blockly.Msg.NEW_VARIABLE_TITLE, defaultName,
+  //       function(text) {
+  //         if (text) {
+  //           var existing =
+  //               Blockly.Variables.nameUsedWithAnyType_(text, workspace);
+  //           if (existing) {
+  //             var lowerCase = text.toLowerCase();
+  //             if (existing.type == type) {
+  //               var msg = Blockly.Msg.VARIABLE_ALREADY_EXISTS.replace(
+  //                   '%1', lowerCase);
+  //             } else {
+  //               var msg = Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE;
+  //               msg = msg.replace('%1', lowerCase).replace('%2', existing.type);
+  //             }
+  //             Blockly.alert(msg,
+  //                 function() {
+  //                   promptAndCheckWithAlert(text);  // Recurse
+  //                 });
+  //           } else {
+  //             // No conflict
+  //             workspace.createVariable(text, type);
+  //             if (opt_callback) {
+  //               opt_callback(text);
+  //             }
+  //           }
+  //         } else {
+  //           // User canceled prompt.
+  //           if (opt_callback) {
+  //             opt_callback(null);
+  //           }
+  //         }
+  //       });
+  // };
+  // promptAndCheckWithAlert('');
   var promptAndCheckWithAlert = function(defaultName) {
-    Blockly.Variables.promptName(Blockly.Msg.NEW_VARIABLE_TITLE, defaultName,
-        function(text) {
+        DemoApp.showDialog("FunctionNameDialog", null, function(text) {
+          console.log(text)
           if (text) {
             var existing =
                 Blockly.Variables.nameUsedWithAnyType_(text, workspace);
@@ -298,10 +338,13 @@ Blockly.Variables.createVariableButtonHandler = function(
               opt_callback(null);
             }
           }
-        });
+        }, this)
   };
   promptAndCheckWithAlert('');
 };
+
+Blockly.Variables.onNewVariable = 
+
 goog.exportSymbol('Blockly.Variables.createVariableButtonHandler',
     Blockly.Variables.createVariableButtonHandler);
 

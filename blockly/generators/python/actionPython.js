@@ -1,6 +1,7 @@
 // 电机转速
 Blockly.Python['d_c_generator_roll_with_speed'] = function(block) {
-    var speed = block.getFieldValue('SPEED');
+    var speed = Blockly.Python.valueToCode(block, 'SPEED',
+    Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
     var generator = block.getFieldValue('GENERATOR');
     var code;
 
@@ -12,9 +13,12 @@ Blockly.Python['d_c_generator_roll_with_speed'] = function(block) {
 //板载LED
 Blockly.Python['turn_on_on_board_light'] = function(block) {
     var select = block.getFieldValue('SELECT');
-    var colorR = block.getFieldValue('COLOR_RED');
-    var colorG = block.getFieldValue('COLOR_GREEN');
-    var colorB = block.getFieldValue('COLOR_BLUE');
+    var colorR = Blockly.Python.valueToCode(block, 'COLOR_RED',
+    Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
+    var colorG = Blockly.Python.valueToCode(block, 'COLOR_GREEN',
+    Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
+    var colorB = Blockly.Python.valueToCode(block, 'COLOR_BLUE',
+    Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
     var code;
 
 

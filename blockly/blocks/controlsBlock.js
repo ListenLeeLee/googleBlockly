@@ -41,7 +41,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "args0": [
             {
                 "type": "input_value",
-                "name": "UNTIL",
+                "name": "BOOL",
                 "check": "Boolean"
             }
         ],
