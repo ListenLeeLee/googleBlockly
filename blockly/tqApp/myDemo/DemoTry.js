@@ -1,5 +1,22 @@
 'use strict';
 var currentBlock;
+var renderer
+var nedb
+var db
+if (ifInPcClient()) {
+    renderer = nodeRequire('../../../renderer.js')
+    nedb = nodeRequire('nedb')
+    db = new nedb({
+        filename:'/data/save.db',
+        autoload: true
+    })
+}
+if (!ifInPcClient()) {
+    $(".serialport").css({ "display": "none" })
+} else {
+    $(".serialport").css({ "display": "block" })
+}
+const clickOrTouch = ifInPcClient() ? "click" : "touchend"
 var DemoApp = {};
 DemoApp.startScale = window.clientZoom*0.9;
 DemoApp.startProgram = '';
@@ -42,11 +59,14 @@ DemoApp.addEventListener = function () {
     function showCode () {
         Blockly.Python.INFINITE_LOOP_TRAP = null;
         var code = Blockly.Python.workspaceToCode(DemoApp.workSpace);
-        console.log(code)
+        // console.log(code)
         if (window.os == "iOS") {
             window.webkit.messageHandlers.writeToDevice.postMessage({code: code})
         } else if (window.os == "AndroidOS") {
             window.android.writeToDevice(code);
+        } else {
+            //pc
+            renderer.writeOperation(code)
         }
     }
     var generateButton = document.getElementById("generateButton");
@@ -78,7 +98,7 @@ DemoApp.addEventListener = function () {
       });
 
       let programSaveButton = document.getElementById("saveButton");
-      programSaveButton.addEventListener("touchend", function(){
+      programSaveButton.addEventListener(clickOrTouch, function(){
         if (DemoApp.currentProgram && DemoApp.currentProgram != "") {
             var newProgramName = document.getElementById("newProgramName");
             newProgramName.value = DemoApp.currentProgram;
@@ -90,19 +110,19 @@ DemoApp.addEventListener = function () {
       dialogBg.addEventListener("click", function () {});
 
       let drawCancel = document.getElementById("drawCancel");
-      drawCancel.addEventListener("touchend", function(){
+      drawCancel.addEventListener(clickOrTouch, function(){
         DemoApp.hideDialog('drawingBoard');
       });
 
       let addFunction = document.getElementById("addFunction");
-      addFunction.addEventListener("touchend", function(){
+      addFunction.addEventListener(clickOrTouch, function(){
         let text = document.getElementById("newFunctionName").value;
         if (text == "") return;
         DemoApp.hideDialog('FunctionNameDialog', text);
       });
 
       let modifyProgramName = document.getElementById("modifyProgramName");
-      modifyProgramName.addEventListener("touchend", function(){
+      modifyProgramName.addEventListener(clickOrTouch, function(){
         let text = this.parentElement.getElementsByTagName("input")[0].value;
         if (text == "") return;
         DemoApp.hideDialog('modifyProgramNameDialog', text);
@@ -186,7 +206,7 @@ DemoApp.initDialog = function () {
                 td.setAttribute("color", colors[i][j]);
                 td.innerHTML = beeps[i][j];
     
-                td.addEventListener("touchend", self.onBeepClick)
+                td.addEventListener(clickOrTouch, self.onBeepClick)
             }
     
             tb.appendChild(tr);
@@ -258,7 +278,7 @@ DemoApp.initDialog = function () {
                 td.setAttribute("key", key);
                 td.innerHTML = content;
     
-                td.addEventListener("touchend", self.onTeleControlClick)
+                td.addEventListener(clickOrTouch, self.onTeleControlClick)
             }
     
             tb.appendChild(tr);
@@ -307,28 +327,35 @@ DemoApp.drawBoard = {
         drawContent.addEventListener("touchstart", this.onPixelClick);
         drawContent.addEventListener("touchmove", this.onPixelClick);
         let confirmBtn = document.getElementById("drawConfirm");
-        confirmBtn.addEventListener("touchend", this.onConfirm);
+        confirmBtn.addEventListener(clickOrTouch, this.onConfirm);
 
         let pen = document.getElementById("drawPen");
-        pen.addEventListener("touchend", function(){
+        pen.addEventListener(clickOrTouch, function(){
             DemoApp.drawBoard.changemode(1);
         });
 
         let eraser = document.getElementById("drawEraser");
-        eraser.addEventListener("touchend", function(){
+        eraser.addEventListener(clickOrTouch, function(){
             DemoApp.drawBoard.changemode(0);
         });
 
         let drawTrashcan = document.getElementById("drawTrashcan");
-        drawTrashcan.addEventListener("touchend", function(){
+        drawTrashcan.addEventListener(clickOrTouch, function(){
             DemoApp.drawBoard.clear();
         });
     },
 
     onPixelClick: function (event) {
         let target = event.target;
-        let touchX = event.touches[0].clientX;
-        let touchY = event.touches[0].clientY;
+        let touchX
+        let touchY
+        if (ifInPcClient()) {
+            touchX = event.clientX;
+            touchY = event.clientY;
+        } else {
+            touchX = event.touches[0].clientX;
+            touchY = event.touches[0].clientY;
+        }
         let drawContent = document.getElementById("drawContent");
         let tds = drawContent.getElementsByTagName("a");
 
@@ -412,24 +439,24 @@ DemoApp.programList = {
     init: function () {
         var self = this;
         var programListButton = document.getElementById("listButton");
-        programListButton.addEventListener("touchend", function(){
+        programListButton.addEventListener(clickOrTouch, function(){
             self.showList(); 
         });
 
         var addProgram = document.getElementById("addProgram");
-        addProgram.addEventListener("touchend", function(){
+        addProgram.addEventListener(clickOrTouch, function(){
             var newProgramName = document.getElementById("newProgramName");
             var name = newProgramName.value;
             self.saveProgram(name);
         });
 
         var resetProgram = document.getElementById("resetProgram");
-        resetProgram.addEventListener("touchend", function(){
+        resetProgram.addEventListener(clickOrTouch, function(){
             self.initStartBlocks();
         });
 
         var newProgram = document.getElementById("newProgram");
-        newProgram.addEventListener("touchend", function(){
+        newProgram.addEventListener(clickOrTouch, function(){
             self.newProgram();
         });
     },
@@ -475,7 +502,7 @@ DemoApp.programList = {
                 }
             );
 
-            li.addEventListener("touchend", function () {
+            li.addEventListener(clickOrTouch, function () {
                     if (this.emitEvent) {
                         var name = this.getAttribute("programName");
                         self.onModifity(name);
@@ -488,6 +515,31 @@ DemoApp.programList = {
                 } 
             );
 
+            if (ifInPcClient()) {
+                li.addEventListener("mousedown", function () {
+                    this.emitEvent = true;
+                    this.isClickStart = true;
+                })
+
+                li.addEventListener("mousemove", function () {
+                    if (this.isClickStart) {
+                        this.emitEvent = false;
+                    }
+                })
+
+                li.addEventListener("mouseup", function () {
+                    if (this.emitEvent) {
+                        var name = this.getAttribute("programName");
+                        self.onModifity(name);
+                    }
+                })
+
+                li.addEventListener("mouseleave", function () {
+                    this.emitEvent = false;
+                    this.isClickStart = false;
+                })
+            }
+
             modifyButton.addEventListener("touchstart", function () {
                 this.emitEvent = true;
                 }
@@ -497,10 +549,9 @@ DemoApp.programList = {
                 } 
             );
 
-            modifyButton.addEventListener("touchend", function (event) {
+            modifyButton.addEventListener(clickOrTouch, function (event) {
                     if (this.emitEvent) {
                         var name = this.parentElement.getAttribute("programname");
-                        console.log(name);
                         document.getElementById("newModifyProgramName").value = name;
                         DemoApp.hideDialog("programDialog");
                         DemoApp.showDialog("modifyProgramNameDialog", null, function(text){
@@ -514,6 +565,39 @@ DemoApp.programList = {
                 }
             )
 
+            if (ifInPcClient()) {
+                modifyButton.addEventListener("mousedown", function () {
+                    this.emitEvent = true;
+                    this.isClickStart = true;
+                })
+
+                modifyButton.addEventListener("mousemove", function () {
+                    if (this.isClickStart) {
+                        this.emitEvent = false;
+                    }
+                })
+
+                modifyButton.addEventListener("mouseup", function () {
+                    if (this.emitEvent) {
+                        var name = this.parentElement.getAttribute("programname");
+                        document.getElementById("newModifyProgramName").value = name;
+                        DemoApp.hideDialog("programDialog");
+                        DemoApp.showDialog("modifyProgramNameDialog", null, function(text){
+                            console.log(text);
+                            let oldName = this.parentElement.getAttribute("programname");
+                            let newName = text;
+                            DemoApp.programList.onModifityName(oldName, newName);
+                        }, this);
+                        event.stopImmediatePropagation();
+                    }
+                })
+
+                modifyButton.addEventListener("mouseleave", function () {
+                    this.emitEvent = false;
+                    this.isClickStart = false;
+                })
+            }
+
             deleteButton.addEventListener("touchstart", function () {
                     this.emitEvent = true;
                 }
@@ -523,7 +607,7 @@ DemoApp.programList = {
                 } 
             );
 
-            deleteButton.addEventListener("touchend", function () {
+            deleteButton.addEventListener(clickOrTouch, function () {
                     if (this.emitEvent) {
                         var name = this.parentElement.getAttribute("programName");
                         self.onDelete(name);
@@ -531,6 +615,33 @@ DemoApp.programList = {
                     }  
                 }
             )
+
+            if (ifInPcClient()) {
+                deleteButton.addEventListener("mousedown", function () {
+                    this.emitEvent = true;
+                    this.isClickStart = true;
+                })
+
+                deleteButton.addEventListener("mousemove", function () {
+                    if (this.isClickStart) {
+                        this.emitEvent = false;
+                    }
+                })
+
+                deleteButton.addEventListener("mouseup", function () {
+                    if (this.emitEvent) {
+                        var name = this.parentElement.getAttribute("programName");
+                        self.onDelete(name);
+                        event.stopImmediatePropagation();
+                    }  
+                })
+
+                deleteButton.addEventListener("mouseleave", function () {
+                    this.emitEvent = false;
+                    this.isClickStart = false;
+                })
+            }
+
         }  
     },
 
@@ -553,14 +664,16 @@ DemoApp.programList = {
                     var nameStr = i == value.length - 1 ? value[i] : value[i] + ";";
                     namesStr += nameStr;
                 }
+                console.log("onModifityName: ", namesStr);
                 this.saveKey("tqProgramNames", namesStr);
-                this.onGetKeyCallback = function (key, value) {
-                    this.saveKey("tqProgram"+newProgram, value);
+                this.onGetKeyCallback = function (key1, value1) {
+                    console.log("onModifityName: ", key1, value1);
+                    this.saveKey("tqProgram"+newName, value1);
                     this.deleteKey("tqProgram"+matchValue);
                     this.initList(value);
                     DemoApp.showDialog("programDialog");
                 };
-                this.getProgram(name);
+                this.getProgram(oldName);
                 
             }
         }
@@ -570,7 +683,6 @@ DemoApp.programList = {
 
     onModifity: function (name) {
         DemoApp.workSpace.clear();
-        console.log("onModifity: ", name)
 
         this.onGetKeyCallback = function (key, value) {
             var dom = Blockly.Xml.textToDom(value);
@@ -624,7 +736,6 @@ DemoApp.programList = {
                     var nameStr = i == value.length - 1 ? value[i] : value[i] + ";";
                     namesStr += nameStr;
                 }
-                // console.log(namesStr, text)
                 this.saveKey("tqProgramNames", namesStr);
 
                 this.saveKey("tqProgram" + name, text);
@@ -652,19 +763,21 @@ DemoApp.programList = {
         if (key !=  "tqProgramNames") {
             key = "tqProgram" + key;
         }
-        // if (window.os == "iOS") {
-        //     window.webkit.messageHandlers.getStr.postMessage({key: key})
-        // } else if (window.os == "AndroidOS") {
-        //     window.android.getStr(key);
-        // }
-        var value;
-        if (key == "tqProgramNames") {
-            value = "hello;1;2;3;4;5";
+        if (window.os == "iOS") {
+            window.webkit.messageHandlers.getStr.postMessage({key: key})
+        } else if (window.os == "AndroidOS") {
+            window.android.getStr(key);
         } else {
-            value = '<xml id="startBlocks" style="display: none">'+
-            '<block x="200" y="10" type="telecontroller"><field name="NAME">2</field></block></xml>'
+            getStr(key)
         }
-        this.onGetKey(key, value);
+        // var value;
+        // if (key == "tqProgramNames") {
+        //     value = "hello;1;2;3;4;5";
+        // } else {
+        //     value = '<xml id="startBlocks" style="display: none">'+
+        //     '<block x="200" y="10" type="telecontroller"><field name="NAME">2</field></block></xml>'
+        // }
+        // this.onGetKey(key, value);
     },
 
     onGetKey: function (key, value) {
@@ -685,6 +798,8 @@ DemoApp.programList = {
             window.webkit.messageHandlers.saveStr.postMessage({key: key, value: value})
         } else if (window.os == "AndroidOS") {
             window.android.saveStr(key, value);
+        } else {
+            saveStr(key, value)
         }
     },
 
@@ -693,9 +808,61 @@ DemoApp.programList = {
             window.webkit.messageHandlers.deleteStr.postMessage({key: key})
         } else if (window.os == "AndroidOS") {
             window.android.deleteStr(key);
+        } else {
+            deleteStr(key)
         }
     }
 }
 
 DemoApp.drawBoard.init();
 DemoApp.programList.init();
+
+function ifInPcClient() {
+    return window.os !== "iOS" && window.os !== "AndroidOS"
+}
+
+function getStr(key) {
+    db.findOne({
+        db_key: key
+    }, (err, ret) => {
+        if (!err) {
+            DemoApp.programList.onGetKey(key, ret && ret.hasOwnProperty('db_value') ? ret.db_value : "")
+        } else {
+            DemoApp.programList.onGetKey(key, "")
+        }
+    })
+}
+
+function saveStr(mKey, mValue) {
+    db.findOne({
+        db_key: mKey
+    }, (err, ret) =>{
+        if (ret && ret.hasOwnProperty('db_value')) {
+            db.update({
+                db_key: mKey
+            }, {
+                $set: {db_value: mValue}
+            }, {
+                multi: true
+            }, function (err, numReplaced) {
+                if (!err) {
+                    console.log(`numReplaced ${numReplaced}`)
+                }
+            })
+        } else {
+            db.insert({
+                db_key: mKey,
+                db_value: mValue
+            }, (err, ret) => {
+            })
+        }
+    })
+}
+
+function deleteStr(key) {
+    db.remove({
+        db_key: key
+    }, {
+        multi: true
+    }, (err, ret) =>{})
+}

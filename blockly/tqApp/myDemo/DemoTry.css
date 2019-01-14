@@ -180,6 +180,7 @@
     border: 0.055rem solid white;
     border-radius: 0.1rem;
     position: relative;
+    box-sizing: content-box;
 }
 
 .title {
@@ -310,6 +311,7 @@
     margin: 0 auto;
     border-radius: 0.1rem;
     padding: 0.1rem;
+    box-sizing: content-box;
 }
 
 #teleControlSelect li {
@@ -355,6 +357,7 @@
     border: 5px solid white;
     border-radius: 0.1rem;
     position: relative;
+    box-sizing: content-box;
 }
 
 #resetProgram {
@@ -377,6 +380,10 @@
     margin: 0.1rem auto;
 }
 
+#addProgram {
+    box-sizing: content-box;
+}
+
 #newProgram img{
     display: block;
     margin: 0 auto;
@@ -395,6 +402,7 @@
     font-weight: bold;
     line-height: 0.6rem;
     position: relative;
+    box-sizing: content-box;
 }
 
 #programList li span {
@@ -429,6 +437,7 @@
     border: 5px solid white;
     border-radius: 0.1rem;
     position: relative;
+    box-sizing: content-box !important;
 }
 
 #programNameDialog input, #FunctionNameDialog input, #modifyProgramNameDialog input{
@@ -438,6 +447,7 @@
     margin: 0.5rem auto 0;
     border: 3px solid rgb(8, 9, 9);
     font-size: 20px;
+    box-sizing: content-box;
 }
 
 #programNameDialog a, #FunctionNameDialog a, #modifyProgramNameDialog a {
@@ -450,10 +460,11 @@
     font-size: 0.16rem;
     line-height: 0.25rem;
     text-align: center;
-    background: rgb(105, 208, 252)
+    background: rgb(105, 208, 252);
+    box-sizing: content-box;
 }
 
-button.close {
+button.btn_close {
     display: block;
     width: 0.4rem;
     height: 0.4rem;
