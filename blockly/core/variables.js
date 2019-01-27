@@ -161,9 +161,9 @@ Blockly.Variables.flyoutCategoryBlocks = function(workspace) {
             '<block type="variables_set" gap="' + gap + '">' +
             Blockly.Variables.generateVariableFieldXmlString(firstVariable) +
             '<value name="VALUE">' +
-          '<block type="math_number">' +
+          '<shadow type="math_number">' +
           '<field name="NUM">0</field>' +
-          '</block>' +
+          '</shadow>' +
           '</value>' +
             '</block>' +
             '</xml>';
@@ -176,9 +176,9 @@ Blockly.Variables.flyoutCategoryBlocks = function(workspace) {
           '<block type="math_change" gap="' + gap + '">' +
           Blockly.Variables.generateVariableFieldXmlString(firstVariable) +
           '<value name="DELTA">' +
-          '<block type="math_number">' +
+          '<shadow type="math_number">' +
           '<field name="NUM">1</field>' +
-          '</block>' +
+          '</shadow>' +
           '</value>' +
           '</block>' +
           '</xml>';

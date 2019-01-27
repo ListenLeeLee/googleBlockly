@@ -16,9 +16,12 @@
     <!-- <script src="../../core/field_tune_select.js"></script> -->
     <!-- <script src="../../core/field_draw.js"></script> -->
 
+    <!-- <script src="core/blockly.js"></script> -->
+    <!-- <script src="../../core/block_svg.js"></script> -->
     <!-- <script src="core/function.js"></script> -->
      <!-- <script src="../../core/command.js"></script> -->
      <!-- <script src="../../core/variables.js"></script> -->
+     <!-- <script src="../../core/contextmenu.js"></script> -->
 
     <!-- <script src="../../blocks/mathAndLogicBlock.js"></script> -->
     <!-- <script src="../../blocks/actionBlock.js"></script> -->
@@ -263,34 +266,34 @@
     <category name="机器人">
         <block type="d_c_generator_roll_with_speed">
             <value name="SPEED">
-                <block type="math_number">
+                <shadow type="math_number">
                     <field name="NUM">0</field>
-                </block>
+                </shadow>
             </value>
         </block>
         <block type="turn_on_on_board_light">
             <value name="COLOR_RED">
-                <block type="math_number">
+                <shadow type="math_number">
                     <field name="NUM">0</field>
-                </block>
+                </shadow>
             </value>
             <value name="COLOR_GREEN">
-                <block type="math_number">
+                <shadow type="math_number">
                     <field name="NUM">0</field>
-                </block>
+                </shadow>
             </value>
             <value name="COLOR_BLUE">
-                <block type="math_number">
+                <shadow type="math_number">
                     <field name="NUM">0</field>
-                </block>
+                </shadow>
             </value>
         </block>
         <block type="play_sound_by_beat"></block>
         <block type="screen_show_number">
             <value name="NUMBER">
-                <block type="math_number">
+                <shadow type="math_number">
                     <field name="NUM">0</field>
-                </block>
+                </shadow>
             </value>
         </block>
         <block type="screen_show_time">
@@ -315,17 +318,17 @@
     <category name="流程">
         <block type="controls_wait">
             <value name="TIME">
-                <block type="math_number">
+                <shadow type="math_number">
                     <field name="NUM">1</field>
-                </block>
+                </shadow>
             </value>
         </block>
         <block type="controls_wait_until"></block>
         <block type="tq_controls_repeat_ext">
             <value name="TIMES">
-                <block type="math_number">
+                <shadow type="math_number">
                     <field name="NUM">10</field>
-                </block>
+                </shadow>
             </value>
         </block>
         <block type="controls_repeat_forever"></block>
