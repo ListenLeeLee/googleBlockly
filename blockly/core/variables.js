@@ -162,7 +162,7 @@ Blockly.Variables.flyoutCategoryBlocks = function(workspace) {
             Blockly.Variables.generateVariableFieldXmlString(firstVariable) +
             '<value name="VALUE">' +
           '<block type="math_number">' +
-          '<field name="NUM">1</field>' +
+          '<field name="NUM">0</field>' +
           '</block>' +
           '</value>' +
             '</block>' +
@@ -308,7 +308,6 @@ Blockly.Variables.createVariableButtonHandler = function(
   // promptAndCheckWithAlert('');
   var promptAndCheckWithAlert = function(defaultName) {
         DemoApp.showDialog("FunctionNameDialog", null, function(text) {
-          console.log(text)
           if (text) {
             var existing =
                 Blockly.Variables.nameUsedWithAnyType_(text, workspace);
