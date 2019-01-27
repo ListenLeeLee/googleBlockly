@@ -273,6 +273,21 @@ Blockly.ContextMenu.blockDuplicateOption = function(block) {
   return duplicateOption;
 };
 
+Blockly.ContextMenu.blockDuplicateWithConnectionOption = function(block) {
+  var enabled = true;
+  if (block.getDescendants().length > block.workspace.remainingCapacity()) {
+    enabled = false;
+  }
+  var duplicateOption = {
+    text: Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION,
+    enabled: enabled,
+    callback: function() {
+      Blockly.duplicate_with_connection_(block);
+    }
+  };
+  return duplicateOption;
+};
+
 /**
  * Make a context menu option for adding or removing comments on the current
  * block.

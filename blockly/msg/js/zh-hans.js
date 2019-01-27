@@ -443,3 +443,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = '复制当前及以下块';

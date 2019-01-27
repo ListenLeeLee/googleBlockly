@@ -267,6 +267,17 @@ Blockly.copy_ = function(block) {
   Blockly.clipboardSource_ = block.workspace;
 };
 
+Blockly.copy_with_connect_ = function(block) {
+  var xmlBlock = Blockly.Xml.blockToDom(block);
+  // Copy only the selected block and internal blocks.
+  // Encode start position in XML.
+  var xy = block.getRelativeToSurfaceXY();
+  xmlBlock.setAttribute('x', block.RTL ? -xy.x : xy.x);
+  xmlBlock.setAttribute('y', xy.y);
+  Blockly.clipboardXml_ = xmlBlock;
+  Blockly.clipboardSource_ = block.workspace;
+};
+
 /**
  * Duplicate this block and its children.
  * @param {!Blockly.Block} block Block to be copied.
@@ -279,6 +290,20 @@ Blockly.duplicate_ = function(block) {
 
   // Create a duplicate via a copy/paste operation.
   Blockly.copy_(block);
+  block.workspace.paste(Blockly.clipboardXml_);
+
+  // Restore the clipboard.
+  Blockly.clipboardXml_ = clipboardXml;
+  Blockly.clipboardSource_ = clipboardSource;
+};
+
+Blockly.duplicate_with_connection_ = function(block) {
+  // Save the clipboard.
+  var clipboardXml = Blockly.clipboardXml_;
+  var clipboardSource = Blockly.clipboardSource_;
+
+  // Create a duplicate via a copy/paste operation.
+  Blockly.copy_with_connect_(block);
   block.workspace.paste(Blockly.clipboardXml_);
 
   // Restore the clipboard.

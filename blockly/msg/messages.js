@@ -1209,3 +1209,4 @@ Blockly.Msg.ACTION_COLOR_WHITE = '白色';
 Blockly.Msg.ACTION_HUE = '#5ECAB8';
 Blockly.Msg.CONTROLS_HUE = '#FF839E';
 Blockly.Msg.MATH_LOGIC_HUE = '#72D572';
+Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = '复制当前及以下块';
