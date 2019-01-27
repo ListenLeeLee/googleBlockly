@@ -75,7 +75,14 @@
             text-align: center;
         }
 
-        #generateButton, #debugButton {
+        #generateButton {
+            width: 0.4rem;
+            height: 0.4rem;
+            background-image: url("../../media/res/download.png");
+            background-size: 0.4rem 0.4rem;
+        }
+
+        #debugButton {
             width: 0.7rem;
             height: 0.7rem;
             background-image: url("../../media/res/run.png");
@@ -134,7 +141,7 @@
             position: absolute;
             right: 0.1rem;
             top: 0.1rem;
-            width: 2.4rem;
+            width: 2.1rem;
             z-index: 100;
         }
         
@@ -142,6 +149,10 @@
             display: block;
             margin-right: 0.05rem;
             float: left;
+        }
+
+        .menu a:nth-child(2) {
+            margin-top: 0.15rem;
         }
 
         .menu a:nth-child(3) {
