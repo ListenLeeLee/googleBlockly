@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "احذف %1 قطع";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "عطّل القطعة";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "مكرر";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "أعد تفعيل القطعة";
 /** @export */ Blockly.Msg.EXPAND_ALL = "وسٌّع القطع";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "وسٌّع القطعة";

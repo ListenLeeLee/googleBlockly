@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "%1 blokan bestere";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Çengi devre ra vec";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Zewnc";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Bloki feal ke";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Blokan hera ke";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Bloki hera ke";

@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Kustuta %1 plokki";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Keela ploki kasutamine";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Tekita duplikaat";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Luba ploki kasutamine";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Laota plokid laiali";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Laota plokk laiali";

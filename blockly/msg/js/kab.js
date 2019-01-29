@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Kkes %1 n yiḥderan";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Sens iḥder";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Sleg";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Sens iḥedran";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Snefli iḥedran";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Snefli iḥder";

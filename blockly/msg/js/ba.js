@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = " %1 блокты юйҙырырға";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Блокты һүндерергә";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Күсереп алырға";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Блокты тоҡандырырға";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Блоктарҙы йәйергә";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Блокты йәйергә";

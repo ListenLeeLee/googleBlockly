@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "מחק %1 קטעי קוד";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "נטרל קטע קוד";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "שכפל";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "הפעל קטע קוד";
 /** @export */ Blockly.Msg.EXPAND_ALL = "הרחב קטעי קוד";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "הרחב קטע קוד";

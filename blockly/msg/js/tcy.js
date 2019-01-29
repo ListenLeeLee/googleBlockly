@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "%1 ಬ್ಲಾಕ್‍ಲೆನ್ ಮಾಜಾವು";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ಬ್ಲಾಕ್‍ನ್ ದೆತ್ತ್‌ಪಾಡ್";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ನಕಲ್";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "ತಡೆನ್ ಸಕ್ರಿಯೊ ಮಲ್ಪು";
 /** @export */ Blockly.Msg.EXPAND_ALL = "ಮಾತಾ ತಡೆಕ್ಲೆನ ಮಾಹಿತಿನ್ ಪರಡಾವು";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ಬ್ಲಾಕ್‍ದ ಮಾಹಿತಿನ್ ಪರಡಾವು";

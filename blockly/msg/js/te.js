@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "%1నిరోదనలను తోలగించు";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "నిరోదన పని చేయకుండా చేయు";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "నకలు";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "నిరోదన ప్రారంబించు";
 /** @export */ Blockly.Msg.EXPAND_ALL = "నిరోదనలను విస్తరించు";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "నిరోదన విస్తరించు";

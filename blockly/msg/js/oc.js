@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Suprimir %1 blòts";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Desactivar lo blòt";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Duplicar";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Activar lo blòt";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Desvolopar los blòts";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Desvolopar lo blòt";

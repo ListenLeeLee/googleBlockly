@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "မွတ်ႇလွင်ႈႁႄႉတတ်း %1";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ဢိုတ်းၸႂ်ႉ လွင်ႈႁႄႉတတ်း";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ထုတ်ႇ";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "ပိုတ်ႇၸႂ်ႉ လွင်ႈႁႄႉတတ်း";
 /** @export */ Blockly.Msg.EXPAND_ALL = "ၶႂၢၵ်ႈၸိူဝ်းႁႄႉတတ်း";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ၶႂၢၵ်ႈလွင်ႈႁႄႉတတ်း";

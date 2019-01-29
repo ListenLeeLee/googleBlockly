@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "پاکسا کردن%1 د برشتیا";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ناکشتگر کردن برشت";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "کپی کردن";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "کنشتگر کردن برشت";
 /** @export */ Blockly.Msg.EXPAND_ALL = "گپ کردن برشتیا";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "گپ کردن برشت";

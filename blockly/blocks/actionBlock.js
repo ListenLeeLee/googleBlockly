@@ -1,5 +1,24 @@
 
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
+    {
+        "type": "start_block",
+        "message0": "%1 当小程序启动",
+        "args0": [
+            {
+                "type": "field_image",
+                "src": "../../media/res/generator.png",
+                "width": 29.5,
+                "height": 20,
+                "alt": "*"
+            }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_ACTION_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+    },
     // 电机转速
     {
         "type": "d_c_generator_roll_with_speed",

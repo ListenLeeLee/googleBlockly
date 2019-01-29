@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "ລຶບ %1 ບລັອກ";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ປິດໃຊ້ງານບລັອກ";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ເຮັດສຳເນົາ";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "ເປີດໃຊ້ງານບລັອກ";
 /** @export */ Blockly.Msg.EXPAND_ALL = "ຂະຫຍາຍບລັອກ";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ຂະຫຍາຍບລັອກ";

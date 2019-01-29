@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Избриши %1 блока";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Исклучи блок";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Ископирај";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Вклучи блок";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Рашири блокови";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Рашири го блокови";

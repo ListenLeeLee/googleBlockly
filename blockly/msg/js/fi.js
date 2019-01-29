@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Poista %1 lohkoa";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Passivoi lohko";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Kaksoiskappale";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Aktivoi lohko";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Laajenna lohkot";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Laajenna lohko";

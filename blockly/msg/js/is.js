@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Eyða %1 kubbum";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Óvirkja kubb";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Afrita";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Virkja kubb";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Opna kubba";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Opna kubb";

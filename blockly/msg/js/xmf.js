@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "%1 ბლოკიშ ლასუა";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ბლოკიშ თიშუა";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "კოპირაფა";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "ბლოკიშ ჩართება";
 /** @export */ Blockly.Msg.EXPAND_ALL = "ბლოკეფიშ გჷმოფაჩუა";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ბლოკიშ გჷმოფაჩუა";

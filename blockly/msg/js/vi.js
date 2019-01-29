@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Xóa %1 Mảnh";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Ngưng Tác Dụng";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Tạo Bản Sao";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Phục Hồi Tác Dụng";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Mở Lớn Mọi Mảnh";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Mở Lớn Mảnh";

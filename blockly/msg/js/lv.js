@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Izmest %1 blokus";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Atspējot bloku";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Dublēt";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Iespējot bloku";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Izvērst blokus";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Izvērst bloku";

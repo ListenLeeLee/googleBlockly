@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "%1 بلاکوں کو حذف کریں";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "بلاک کو غیرفعال کریں";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ڈپلیکیٹ";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "بلاک کو فعال کریں";
 /** @export */ Blockly.Msg.EXPAND_ALL = "بلاکوں میں توسیع کریں";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "بلاک میں توسیع کریں";

@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Hapuskan %1 Blok";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Matikan Blok";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Pendua";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Hidupkan Blok";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Buka Blok²";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Buka Blok";

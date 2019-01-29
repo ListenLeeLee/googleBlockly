@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "%1 個のブロックを削除";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ブロックを無効にする";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "複製";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "ブロックを有効にする";
 /** @export */ Blockly.Msg.EXPAND_ALL = "ブロックを展開する";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ブロックを展開する";

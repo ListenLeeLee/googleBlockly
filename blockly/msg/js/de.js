@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "%1 Bausteine löschen";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Baustein deaktivieren";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Kopieren";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Baustein aktivieren";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Alle Bausteine entfalten";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Baustein entfalten";

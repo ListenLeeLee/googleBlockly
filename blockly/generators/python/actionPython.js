@@ -1,4 +1,10 @@
 // 电机转速
+Blockly.Python['start_block'] = function(block) {
+    var code;
+    code = code + '\n';
+    return code;
+};
+// 电机转速
 Blockly.Python['d_c_generator_roll_with_speed'] = function(block) {
     var speed = Blockly.Python.valueToCode(block, 'SPEED',
     Blockly.Python.ORDER_MULTIPLICATIVE) || '0';

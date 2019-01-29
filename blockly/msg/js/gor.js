@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "Moluluto %1 Blok";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Moberenti Blok";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Duplikat";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Momulayi Blok";
 /** @export */ Blockly.Msg.EXPAND_ALL = "Lolade Blok";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Lolade Blok";

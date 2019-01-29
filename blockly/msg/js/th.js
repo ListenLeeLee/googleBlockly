@@ -82,6 +82,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DELETE_X_BLOCKS = "ลบ %1 บล็อก";
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ปิดใช้งานบล็อก";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ทำสำเนา";
+/** @export */ Blockly.Msg.DUPLICATE_BLOCK_WITH_CONNECTION = "复制当前及以下块";  // untranslated
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "เปิดใช้งานบล็อก";
 /** @export */ Blockly.Msg.EXPAND_ALL = "ขยายบล็อก";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ขยายบล็อก";
