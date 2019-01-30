@@ -13,9 +13,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
             }
         ],
         "inputsInline": true,
-        "previousStatement": null,
         "nextStatement": null,
-        "colour": "%{BKY_ACTION_HUE}",
+        "colour": "%{BKY_CONTROLS_HUE}",
         "tooltip": "",
         "helpUrl": ""
     },

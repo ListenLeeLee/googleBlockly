@@ -1,7 +1,7 @@
 // 电机转速
 Blockly.Python['start_block'] = function(block) {
     var code;
-    code = code + '\n';
+    code = '\n';
     return code;
 };
 // 电机转速
