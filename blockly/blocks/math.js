@@ -226,7 +226,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_VARIABLES_HUE}",
+    "colour": "%{BKY_COMMOND_COLOR}",
     "helpUrl": "%{BKY_MATH_CHANGE_HELPURL}",
     "extensions": ["math_change_tooltip"]
   },

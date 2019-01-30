@@ -50,7 +50,7 @@ Blockly.Blocks['procedures_defnoreturn'] = {
     //     Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT) {
     //   this.setCommentText(Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT);
     // }
-    this.setColour(Blockly.Msg.PROCEDURES_HUE);
+    this.setColour(Blockly.Msg.COMMOND_COLOR);
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);
     this.arguments_ = [];
@@ -557,7 +557,7 @@ Blockly.Blocks['procedures_callnoreturn'] = {
         .appendField(this.id, 'NAME');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(Blockly.Msg.PROCEDURES_HUE);
+    this.setColour(Blockly.Msg.COMMOND_COLOR);
     // Tooltip is set in renameProcedure.
     this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
     this.arguments_ = [];

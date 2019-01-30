@@ -444,3 +444,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+Blockly.Msg.COMMOND_COLOR = "#F29C38";
