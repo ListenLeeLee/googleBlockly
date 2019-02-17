@@ -26,7 +26,7 @@ DemoApp.initApplication = function () {
         {
             media: '../../media/',
             toolbox: document.getElementById('toolbox'),
-            scrollbars: false,
+            scrollbars: true,
             zoom: {
                 controls: false,
                 wheel: false,
