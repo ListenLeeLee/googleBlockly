@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "vörös";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "Szín";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Szín előállítása a megadott vörös, zöld, és kék értékekkel.  Minden értéknek 0 és 100 közé kell esnie.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "befejezi az ismétlést";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "folytatja a következővel";

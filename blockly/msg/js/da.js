@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "rød";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "farve med";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Lav en farve med den angivne mængde af rød, grøn og blå. Alle værdier skal være mellem 0 og 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "bryd ud af løkken";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "fortsæt med den næste gentagelse i løkken";

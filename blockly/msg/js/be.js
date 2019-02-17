@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "чырвоны";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "колер з";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Стварыць колер з названымі ўзроўнямі чырвонага, зялёнага і сіняга. Усе значэння павінны быць ад 0 да 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "перарваць цыкл";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "прадоўжыць з наступнай ітэрацыі цыклу";

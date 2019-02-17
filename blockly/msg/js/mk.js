@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "црвена";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "боја со";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Создајте боја со укажаните износи на црвена, зелена и сина. Сите вредности мора да бидат помеѓу 0 и 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "излези од јамката";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "продолжи со следното повторување на јамката";

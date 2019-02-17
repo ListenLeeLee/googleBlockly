@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "빨강";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "색";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "빨강,파랑,초록의 값을 이용하여 색을 만드십시오. 모든 값은 0과 100 사이에 있어야 합니다.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%96%B4_%ED%9D%90%EB%A6%84";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "반복 중단";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "다음 반복";

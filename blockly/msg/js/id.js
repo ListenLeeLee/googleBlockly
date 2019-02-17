@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "merah";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "Dengan warna";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Buatlah warna dengan jumlah yang ditentukan dari merah, hijau dan biru. Semua nilai harus antarai 0 sampai 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "keluar dari perulangan";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "lanjutkan dengan langkah perulangan berikutnya";

@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "pula";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "kulayan ng";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "gumawa ng kulay ng may espisipikong dami ng kulay pula, berde, at asul. lahat ng halaga ay dapat sa pagitan ng 0 at 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "putulin ang paulit ulit";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "Magpatuloy sa susunod na pag-ulit ng loop";

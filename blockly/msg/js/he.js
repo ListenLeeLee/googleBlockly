@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "אדום";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "צבע עם";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "צור צבע עם הסכום המצוין של אדום, ירוק וכחול. כל הערכים חייבים להיות בין 0 ל100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "צא מהלולאה";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "המשך עם האיטרציה הבאה של הלולאה";

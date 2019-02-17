@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "ಕೆಂಪು";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "ಬಣ್ಣೊದ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "ತೊಜಪಾಯಿನ ಪ್ರಮಾಣೊದ ಕೆಂಪು, ಪಚ್ಚೆ ಬೊಕ್ಕ ನೀಲಿ ಬಣ್ಣೊಡ್ದು ಒಂಜಿ ಬಣ್ಣೊನು ಉಂಡು ಮಲ್ಪುಲೆ. ಮಾತಾ ಮೌಲ್ಯೊಲು 0 ಬುಕ್ಕೊ 100 ತ ನಡುಟೆ ಇಪ್ಪೊಡು.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ಲೂಪ್ ಕಡಿಯುನಿ";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "ಬೊಕ್ಕದ ಲೂಪ್ ಪುನರಾವರ್ತನೆದೊಟ್ಟುಗು ದುಂಬರಿಲೆ";

@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "சிகப்பு";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "நிறத்துடன்";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "குறிப்பிட்ட அளவு சிவப்பு,பச்சை மற்றும் நீலம் சேர்த்து புது நிறம் உருவாக்கு. மதிப்புகள் 0 முதல் 100 வரை மட்டுமே இருக்க வேண்டும்.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "மடக்கு கட்டளையை நிறுத்து.";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "மடக்கு கட்டளையின் அடுத்த இயக்கநிலைக்கு செல்";

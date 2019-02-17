@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "ruz";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "liv gant";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Krouiñ ul liv gant ar c'hementad spisaet a ruz, a wer hag a c'hlas. Etre 0 ha 100 e tle bezañ an holl dalvoudoù.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "Mont e-maez an adlañsañ";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "Kenderc'hel gant iteradur nevez ar rodell";

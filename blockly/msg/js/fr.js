@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "rouge";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "colorier en";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Créer une couleur avec la quantité spécifiée de rouge, vert et bleu. Les valeurs doivent être comprises entre 0 et 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "quitter la boucle";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "passer à l’itération de boucle suivante";

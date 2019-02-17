@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "qırmızı";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "rənglə";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Qırmızı, yaşıl və mavinin göstərilən miqdarı ilə bir rəng düzəlt. Bütün qiymətlər 0 ilə 100 arasında olmalıdır.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "dövrdən çıx";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "dövrün növbəti addımından davam et";

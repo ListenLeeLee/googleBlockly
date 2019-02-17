@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "punasest";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "segu";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Tekitab värvi määratud hulgast punasest, rohelisest ja sinisest. Kõik väärtused peavad olema 0 ja 100 vahel.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "välju kordusest";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "katkesta see kordus ja liigu järgmisele";

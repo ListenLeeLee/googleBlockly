@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "roşu";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "colorează cu";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Creează o culoare cu suma specificată de roşu, verde şi albastru.  Toate valorile trebuie să fie între 0 şi 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ieşi din bucla";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "continuă cu următoarea iterație a buclei";

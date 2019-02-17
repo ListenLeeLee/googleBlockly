@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "လီင်";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "ႁူမ်ႈၵိုၵ်းသီ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "ႁဵတ်းတူၺ်း သီဢၼ်ၼိုင်ႈ ၸွမ်းၼင်ႇမၵ်းမၼ်ႈဝႆႉ ၼႂ်းၶႂၢင်ႇ သီလႅင်, ၶဵဝ် လႄႈ သွမ်ႇ။ ၼမ်ႉၼၵ်းသီ တေလႆႈမီးၼႂ်းဝူင်ႈၵၢင် 0 တေႃႇ 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ဢွၵ်ႇတီႈၶွပ်ႇမူၼ်း";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "သိုပ်ႇပၼ်ႇထႅင်ႈ ၶွပ်ႇမူၼ်းတၢင်ႇဢၼ်";

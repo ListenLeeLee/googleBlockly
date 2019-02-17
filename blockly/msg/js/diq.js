@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "sur";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "komponentên rengan";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Şıma renganê sûr, aşıl u kohoy ra rengê do spesifik vırazê. Gani ê pêro 0 u 100 miyan de bıbê.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "Çerxen ra vec";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "Gama bin da çerxeni ra dewam ke";

@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "crvena";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "boja sa";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Kreiraj boju sa određenom količinom crvene,zelene, i plave. Sve vrednosti moraju biti između 0 i 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "Izađite iz petlje";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "nastavi sa sledećom iteracijom petlje";

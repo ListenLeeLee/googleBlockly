@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "rauður";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "litur";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Búa til lit úr tilteknu magni af rauðu, grænu og bláu. Allar tölurnar verða að vera á bilinu 0 til 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "fara út úr lykkju";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "fara beint í næstu umferð lykkjunnar";

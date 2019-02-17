@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "arrùbiu";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "colora cun";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Cuncorda unu colori cun su tanti de arrubiu, birdi, e blue. Totu is valoris depint essi intra 0 e 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "sàrtiat a foras de sa lòriga";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "sighit cun su repicu afatànti";

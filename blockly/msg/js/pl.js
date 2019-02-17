@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "czerwony";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "kolor z";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Utwórz kolor składający sie z podanej ilości czerwieni, zieleni i błękitu. Zakres wartości: 0 do 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "przerwij pętlę";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "przejdź do kolejnej iteracji pętli";

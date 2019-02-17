@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "ຄ່າສີແດງ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "ສີທີ່ປະກອບດ້ວຍ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "ສ້າງສີດ້ວຍການກຳນົດຄ່າສີແດງ, ສີຂຽວ, ແລະສີນ້ຳເງິນ. ຄ່າທັງໝົດຕ້ອງຢູ່ລະຫວ່າງ 0 ເຖິງ 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ອອກຈາກການວົນຊ້ຳ";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "ເລີ່ມການວົນຊ້ຳຮອບຕໍ່ໄປ";

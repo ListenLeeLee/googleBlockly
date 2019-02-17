@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "màu đỏ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "tạo màu từ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Tạo màu từ ba màu: đỏ, xanh lá cây, xanh dương với số lượng cụ thể.  Mỗi số phải có giá trị từ 0 đến 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "thoát";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "sang lần lặp tiếp theo";

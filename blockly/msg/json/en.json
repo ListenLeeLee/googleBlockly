@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2019-01-29 13:17:18.143308",
+		"lastupdated": "2019-01-31 21:35:17.513824",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -412,5 +412,6 @@
 	"ACTION_HUE": "#5ECAB8",
 	"CONTROLS_HUE": "#FF839E",
 	"MATH_LOGIC_HUE": "#72D572",
-	"DUPLICATE_BLOCK_WITH_CONNECTION": "复制当前及以下块"
+	"DUPLICATE_BLOCK_WITH_CONNECTION": "复制当前及以下块",
+	"COMMOND_COLOR": "#F29C38"
 }

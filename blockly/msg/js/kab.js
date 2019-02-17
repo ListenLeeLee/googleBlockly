@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "azeggwaɣ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "ini s";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Rnu ini s tnecta yettunefk s tesmekta n uzeggaɣ, azegzaw, akked unili. Yessefk akk azalen ad ilin gar 0 akked 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ffeɣ seg tneddict";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "kemmel s wallus d tneddict d-iteddun";

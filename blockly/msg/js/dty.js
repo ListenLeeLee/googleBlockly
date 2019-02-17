@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "रातो";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "यै रङ्गको";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "रातो, हरियो और नीलोको निर्दिष्ट मात्राकी साथ एक रंग बनाओ । सबै मान ० देखि १०० का बीच हुनु पडन्छ ।";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "लूप बाट भाइर निकलौं";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "लूपको अर्को आईटरेशन जारी राख";

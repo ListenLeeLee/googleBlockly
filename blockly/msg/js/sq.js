@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "e kuqe";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "ngjyre me";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Krijo një ngjyrë me shumën e specifikuar te te kuqes, te gjelbëres, dhe bluse. Te gjitha vlerat duhet te jene mes 0 dhe 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "dil nga nje faze perseritese";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "vazhdo me elementin tjeter te nje faze perseritese";

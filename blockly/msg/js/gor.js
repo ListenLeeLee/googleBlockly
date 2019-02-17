@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "meela";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "wolo laku";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Pohutuwa laku wolo jumula u tilantu monto u meela, moyidu wawu wahu'ente. Nga'amila musi o woolota 0 wawu 100";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "Mokaluwari lonto u'uulangiya";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "continue with next iteration of loop";  // untranslated

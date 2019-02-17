@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "красного";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "цвет из";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Создаёт цвет с указанной пропорцией  красного, зеленого и синего.  Все значения должны быть между 0 и 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "выйти из цикла";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "перейти к следующему шагу цикла";

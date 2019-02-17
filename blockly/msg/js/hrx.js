@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "rot";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "Färreb mit";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Kreiere ene Farreb mit sellrbst definierte rot, grün und blau Wearte. All Wearte müsse zwischich 0 und 100 liehe.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ausbreche aus der Schleif";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "mit der nächste Iteration fortfoohre aus der Schleifa";

@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "raudona";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "spalva su";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Spalvą galima sudaryti iš raudonos, žalios ir mėlynos dedamųjų. Kiekvienos intensyvumas nuo 0 iki 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "nutraukti kartojimą";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "šį kartą praleisti likusius veiksmus ir tęsti kartojimą";

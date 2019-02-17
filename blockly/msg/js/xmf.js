@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "ჭითა";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "ფერიː";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "აკოქიმინით ფერი მოჩამილი ჭითა, წვანე დო ლენი ფერეფიშ პროპორციეფით. არძა შანულობა 0 დო 100 შქას ოკო რდას.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "ციკლშე გიშულა";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "ციკლიშ გეჸვენჯი ბიჯგშა გინულა";

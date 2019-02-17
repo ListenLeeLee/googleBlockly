@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "ఎరుపు";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "తో రంగు";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "ఎరుపు,పచ్చ మరియు బులుగు రంగులను సమంగా ఉపయోగించి ఒక రంగును సృష్ఠించండి.అన్ని విలువలు 0 నుండి 100 మధ్యలో ఉండాలి.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "break out of loop";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "continue with next iteration of loop";  // untranslated

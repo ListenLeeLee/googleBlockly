@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "紅";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "顏色";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "透過指定紅、綠、 藍色的值來建立一種顏色。所有的值必須介於 0 和 100 之間。";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "中斷循環";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "繼續下一個循環";

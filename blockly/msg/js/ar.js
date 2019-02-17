@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "أحمر";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "لون مع";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "إنشئ لون بالكمية المحددة من الأحمر, الأخضر والأزرق. بحيث يجب تكون كافة القيم بين 0 و 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "اخرج من الحلقة";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "استمر ابتداءا من التكرار التالي من الحلقة";

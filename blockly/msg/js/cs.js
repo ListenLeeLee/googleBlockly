@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "červená";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "obarvěte barvou";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Vytvoř barvu se zadaným množstvím červené, zelené a modré.  Všechny hodnoty musí být mezi 0 a 100.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "vyskočit ze smyčky";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "pokračuj dalším opakováním smyčky";

@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "লাল";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "রং সহ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "একটি রং তৈরি করুন নির্দিষ্ট পরিমাণে লাল, সবুজ এবং নীল রং মিশ্রিত করে। প্রত্যেকটির মান অবশ্যই ০ থেকে ১০০ এর মধ্যে হতে হবে।";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "প্রবেশপথ থেকে চলে অাসুন";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "পুনরাবৃত্তি চালিয়ে যান পরবর্তী প্রবেশপথে";

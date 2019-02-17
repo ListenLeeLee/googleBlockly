@@ -42,6 +42,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_RGB_RED = "ҡыҙылдан";
 /** @export */ Blockly.Msg.COLOUR_RGB_TITLE = "ошонан төҫ";
 /** @export */ Blockly.Msg.COLOUR_RGB_TOOLTIP = "Бирелгән нисбәттәрҙә ҡыҙылдан, йәшелдән һәм зәңгәрҙән төҫ барлыҡҡа килә. Бөтә мәғәнәләр 0 менән 100 араһында булырға тейеш.";
+/** @export */ Blockly.Msg.COMMOND_COLOR = "#F29C38";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = "https://github.com/google/blockly/wiki/Loops#loop-termination-blocks";  // untranslated
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK = "циклдан сығырға";
 /** @export */ Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE = "циклдың киләһе аҙымына күсергә";
