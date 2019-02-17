@@ -56,9 +56,32 @@ DemoApp.initStartBlocks = function () {
 
 DemoApp.addEventListener = function () {
     let self = this;
+
+    function showDebugCode() {
+      let has = hasStartBlock();
+      if(!has) {
+        showCommonTip("请拖入启动块，并保证启动块下有流程块");
+        return
+      }
+      Blockly.Python.INFINITE_LOOP_TRAP = null;
+      var code = Blockly.Python.workspaceToCode(DemoApp.workSpace);
+      // console.log(code)
+      if (window.os == "iOS") {
+        window.webkit.messageHandlers.writeDebugStrToDevice.postMessage({code: code})
+      } else if (window.os == "AndroidOS") {
+        window.android.writeDebugStrToDevice(code);
+      } else {
+        //pc
+        renderer.writeDebugStrOperation(code)
+      }
+    }
+
     function showCode () {
         let has = hasStartBlock();
-        if(!has) return;
+        if(!has) {
+            showCommonTip("请拖入启动块，并保证启动块下有流程块");
+            return
+        }
         Blockly.Python.INFINITE_LOOP_TRAP = null;
         var code = Blockly.Python.workspaceToCode(DemoApp.workSpace);
         // console.log(code)
@@ -73,6 +96,9 @@ DemoApp.addEventListener = function () {
     }
     var generateButton = document.getElementById("generateButton");
     generateButton.addEventListener("click", showCode);
+
+    var debugButton = document.getElementById("debugButton");
+    debugButton.addEventListener("click", showDebugCode);
 
     let zoomEqual = document.getElementById("zoomEqual");
     Blockly.bindEventWithChecks_(zoomEqual, 'mousedown', null, function(e) {
@@ -101,7 +127,7 @@ DemoApp.addEventListener = function () {
 
       let programSaveButton = document.getElementById("saveButton");
       programSaveButton.addEventListener(clickOrTouch, function(){
-        if (DemoApp.currentProgram && DemoApp.currentProgram != "") {
+        if (DemoApp.currentProgram || DemoApp.currentProgram == "") {
             var newProgramName = document.getElementById("newProgramName");
             newProgramName.value = DemoApp.currentProgram;
         }
@@ -130,7 +156,11 @@ DemoApp.addEventListener = function () {
         DemoApp.hideDialog('modifyProgramNameDialog', text);
         DemoApp.showDialog("programDialog");
       });
-      
+
+      let commonTipOk = document.getElementById("commonTipOk");
+      commonTipOk.addEventListener(clickOrTouch, function(){
+        DemoApp.hideDialog('commonTip');
+      });
 };
 
 DemoApp.initCustomBlocks = function(){
@@ -504,7 +534,7 @@ DemoApp.programList = {
                 }
             );
 
-            li.addEventListener(clickOrTouch, function () {
+            li.addEventListener("touchend", function () {
                     if (this.emitEvent) {
                         var name = this.getAttribute("programName");
                         self.onModifity(name);
@@ -690,7 +720,7 @@ DemoApp.programList = {
             var dom = Blockly.Xml.textToDom(value);
             Blockly.Xml.domToWorkspace(dom,
                 DemoApp.workSpace);
-            DemoApp.currentProgram = key;
+            DemoApp.currentProgram = key.split("tqProgram")[1];
             DemoApp.hideDialog("programDialog");
         };
         
@@ -880,4 +910,11 @@ function hasStartBlock() {
     }
 
     return false;
+}
+
+function showCommonTip (text) {
+    DemoApp.showDialog("commonTip");
+    let dialog = document.getElementById("commonTip");
+    let p = dialog.getElementsByClassName("tipContent");
+    p[0].innerText = text; 
 }

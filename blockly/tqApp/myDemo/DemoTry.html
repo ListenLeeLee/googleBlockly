@@ -85,10 +85,10 @@
         }
 
         #debugButton {
-            width: 0.7rem;
-            height: 0.7rem;
+            width: 0.4rem;
+            height: 0.4rem;
             background-image: url("../../media/res/run.png");
-            background-size: 0.7rem 0.7rem;
+            background-size: 0.4rem 0.4rem;
         }
 
         #saveButton {
@@ -151,6 +151,10 @@
             display: block;
             margin-right: 0.05rem;
             float: left;
+        }
+
+        .menu a:nth-child(1) {
+          margin-top: 0.15rem;
         }
 
         .menu a:nth-child(2) {
@@ -546,10 +550,16 @@
         </div>
 
         <div id="modifyProgramNameDialog" class="dialog hide">
-                <p class="title">请输入名称</p>
-                <input id="newModifyProgramName" type="text">
-                <a id="modifyProgramName">确定</a>
-                <button class="btn_close" onclick="DemoApp.hideDialog('modifyProgramNameDialog');DemoApp.showDialog('programDialog');"></button>
+            <p class="title">请输入名称</p>
+            <input id="newModifyProgramName" type="text">
+            <a id="modifyProgramName">确定</a>
+            <button class="btn_close" onclick="DemoApp.hideDialog('modifyProgramNameDialog');DemoApp.showDialog('programDialog');"></button>
+        </div>
+        <div id="commonTip" class="dialog hide">
+                <p class="title">提示</p>
+                <p class="tipContent"></p>
+                <a id="commonTipOk">好的</a>
+                <button class="btn_close" onclick="DemoApp.hideDialog('commonTip');"></button>
             </div>
     </div>
 </div>
