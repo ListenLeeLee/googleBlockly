@@ -918,3 +918,44 @@ function showCommonTip (text) {
     let p = dialog.getElementsByClassName("tipContent");
     p[0].innerText = text; 
 }
+
+DemoApp.alert = function (msg) {
+    let systemDialog = document.getElementById("systemDialog");
+    systemDialog.style.display = "table";
+    let alert = document.getElementById("sysAlert");
+    alert.className = "sysD show";
+    alert.getElementsByTagName("p")[0].innerText = msg;
+}
+
+DemoApp.hideAlert = function (data) {
+    let systemDialog = document.getElementById("systemDialog");
+    systemDialog.style.display = "none";
+    
+    let alert = document.getElementById("sysAlert");
+    alert.className = "sysD hide";
+    if (alert.callback && data) {
+        alert.callback.call(alert.target, data);
+    }
+}
+
+DemoApp.prompt = function (msg, defaultValue, callback) {
+    let systemDialog = document.getElementById("systemDialog");
+    systemDialog.style.display = "table";
+    let prompt = document.getElementById("sysPrompt");
+    prompt.className = "sysD show";
+    prompt.getElementsByTagName("p")[0].innerText = msg;
+    prompt.getElementsByTagName("input")[0].value = defaultValue;
+    prompt.callback = callback;
+}
+
+DemoApp.hidePrompt = function (hascallback) {
+    let systemDialog = document.getElementById("systemDialog");
+    systemDialog.style.display = "none";
+
+    let prompt = document.getElementById("sysPrompt");
+    prompt.className = "sysD hide";
+    let value = prompt.getElementsByTagName("input")[0].value;
+    if(prompt.callback && hascallback){
+        prompt.callback(value);
+    }
+}
