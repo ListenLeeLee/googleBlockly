@@ -2,13 +2,13 @@
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     {
         "type": "start_block",
-        "message0": "%1 当小程序启动",
+        "message0": "%1",
         "args0": [
             {
                 "type": "field_image",
-                "src": "../../media/res/generator.png",
-                "width": 29.5,
-                "height": 20,
+                "src": "../../media/res/logo_1.png",
+                "width": 155.5,
+                "height": 52.5,
                 "alt": "*"
             }
         ],

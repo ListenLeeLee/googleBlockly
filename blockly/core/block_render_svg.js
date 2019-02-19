@@ -253,7 +253,20 @@ Blockly.BlockSvg.INNER_BOTTOM_LEFT_CORNER_HIGHLIGHT_LTR =
     Blockly.BlockSvg.DISTANCE_45_OUTSIDE) + ',' +
     (Blockly.BlockSvg.DISTANCE_45_OUTSIDE + 0.5);
 
-/**
+Blockly.BlockSvg.TOP_LEFT_CORNER_START_S =
+    'm 0,' + 10;
+Blockly.BlockSvg.TOP_LEFT_CORNER_S =
+    'l 12,0' + 'A ' + 35 + ',' +
+    35 + ' 0 0,1 ' +
+    60 + ',10';
+Blockly.BlockSvg.TOP_LEFT_CORNER_HIGHLIGHT_S =
+'l 12,0' + 'A ' + 35 + ',' +
+    35 + ' 0 0,1 ' +
+    60 + ',10';
+
+Blockly.BlockSvg.TOP_LEFT_CORNER_START_HIGHLIGHT_LTR_S =
+'m 0,' + 10;
+/**m 0,10 l 12,0 A 35,35 0 0,1 60,10 H 60 H 175.5 v 52.5 H 49.5 l -6,4 -3,0 -6,-4 H 4 a 4,4 0 0,1 -4,-4 z 
  * Returns a bounding box describing the dimensions of this block
  * and any blocks stacked below it.
  * @return {!{height: number, width: number}} Object with height and width
@@ -634,13 +647,32 @@ Blockly.BlockSvg.prototype.renderDrawTop_ = function(steps,
           Blockly.BlockSvg.START_HAT_HIGHLIGHT_LTR);
     }
   } else {
-    steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_START);
-    highlightSteps.push(this.RTL ?
+    if (this.type == "start_block") {
+      steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_START_S);
+    } else {
+      steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_START);
+    }
+    if (this.type == "start_block") {
+      highlightSteps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_START_HIGHLIGHT_LTR_S);
+    } else {
+      highlightSteps.push(this.RTL ?
         Blockly.BlockSvg.TOP_LEFT_CORNER_START_HIGHLIGHT_RTL :
         Blockly.BlockSvg.TOP_LEFT_CORNER_START_HIGHLIGHT_LTR);
+    }
+    
     // Top-left rounded corner.
-    steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER);
-    highlightSteps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_HIGHLIGHT);
+    if (this.type == "start_block") {
+      steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_S);
+    } else {
+      steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER);
+    }
+    
+    
+    if (this.type == "start_block") {
+      highlightSteps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_HIGHLIGHT_S);
+    } else {
+      highlightSteps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_HIGHLIGHT);
+    }
   }
 
   // Top edge.
@@ -681,8 +713,13 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps, highlightSteps,
     if (y == 0) {
       cursorX += this.RTL ? -iconWidth : iconWidth;
     }
-    highlightSteps.push('M', (inputRows.rightEdge - 0.5) + ',' +
+    if (this.type == "start_block") {
+      highlightSteps.push('M', (59.5) + ',' +
+        (10));
+    } else {
+      highlightSteps.push('M', (inputRows.rightEdge - 0.5) + ',' +
         (cursorY + 0.5));
+    }
     if (this.isCollapsed()) {
       // Jagged right edge.
       var input = row[0];
@@ -770,7 +807,11 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps, highlightSteps,
       this.width = Math.max(this.width, cursorX);
       steps.push('H', cursorX);
       highlightSteps.push('H', cursorX - 0.5);
-      steps.push('v', row.height);
+      if (this.type == "start_block") {
+        steps.push('v', 52.5);
+      } else {
+        steps.push('v', row.height);
+      }
       if (this.RTL) {
         highlightSteps.push('v', row.height - 1);
       }
@@ -992,7 +1033,11 @@ Blockly.BlockSvg.prototype.renderDrawLeft_ = function(steps, highlightSteps) {
       // Statement block in a stack.
       highlightSteps.push('V', 0.5);
     } else {
-      highlightSteps.push('V', Blockly.BlockSvg.CORNER_RADIUS);
+      if (this.type == "start_block") {
+
+      } else {
+        highlightSteps.push('V', Blockly.BlockSvg.CORNER_RADIUS);
+      }
     }
   }
   steps.push('z');
