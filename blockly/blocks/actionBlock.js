@@ -7,8 +7,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
             {
                 "type": "field_image",
                 "src": "../../media/res/logo_1.png",
-                "width": 155.5,
-                "height": 52.5,
+                "width": 222,
+                "height": 53,
                 "alt": "*"
             }
         ],
