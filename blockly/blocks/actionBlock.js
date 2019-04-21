@@ -316,7 +316,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     //音量传感器
     {
         "type": "volume",
-        "message0": "%1 音量传感器 %2 ",
+        "message0": "%1 声音传感器 %2 ",
         "args0": [
             {
                 "type": "field_image",

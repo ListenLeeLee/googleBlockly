@@ -659,7 +659,7 @@ Blockly.BlockSvg.prototype.showContextMenu_ = function(e) {
     //   menuOptions.push(disableOption);
     // }
 
-    // menuOptions.push(Blockly.ContextMenu.blockDeleteOption(block));
+    menuOptions.push(Blockly.ContextMenu.blockDeleteOption(block));
   }
 
   // menuOptions.push(Blockly.ContextMenu.blockHelpOption(block));

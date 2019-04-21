@@ -386,6 +386,7 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
   // children beyond the lists' length.  Trust the length, do not use the
   // looping pattern of checking the index for an object.
   var childCount = xml.childNodes.length;
+  console.log(childCount, xml.childNodes)
   var existingGroup = Blockly.Events.getGroup();
   if (!existingGroup) {
     Blockly.Events.setGroup(true);
@@ -439,6 +440,7 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
   if (workspace.setResizesEnabled) {
     workspace.setResizesEnabled(true);
   }
+  console.log(newBlockIds)
   return newBlockIds;
 };
 

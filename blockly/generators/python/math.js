@@ -49,6 +49,8 @@ Blockly.Python['math_number'] = function(block) {
   return [code, order];
 };
 
+Blockly.Python['generator_math_number'] =Blockly.Python['math_number'];
+Blockly.Python['color_math_number'] =Blockly.Python['math_number'];
 Blockly.Python['math_arithmetic'] = function(block) {
   // Basic arithmetic operators, and power.
   var OPERATORS = {

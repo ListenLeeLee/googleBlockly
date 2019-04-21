@@ -59,6 +59,40 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "extensions": ["parent_tooltip_when_inline"]
   },
 
+  {
+    "type": "generator_math_number",
+    "message0": "%1",
+    "args0": [{
+      "type": "field_number",
+      "name": "NUM",
+      "value": 0,
+      "max": 255,
+      "min": -255
+    }],
+    "output": "Number",
+    "colour": "%{BKY_MATH_HUE}",
+    "helpUrl": "%{BKY_MATH_NUMBER_HELPURL}",
+    "tooltip": "%{BKY_MATH_NUMBER_TOOLTIP}",
+    "extensions": ["parent_tooltip_when_inline"]
+  },
+
+  {
+    "type": "color_math_number",
+    "message0": "%1",
+    "args0": [{
+      "type": "field_number",
+      "name": "NUM",
+      "value": 0,
+      "max": 255,
+      "min": 0
+    }],
+    "output": "Number",
+    "colour": "%{BKY_MATH_HUE}",
+    "helpUrl": "%{BKY_MATH_NUMBER_HELPURL}",
+    "tooltip": "%{BKY_MATH_NUMBER_TOOLTIP}",
+    "extensions": ["parent_tooltip_when_inline"]
+  },
+
   // Block for basic arithmetic operator.
   {
     "type": "math_arithmetic",

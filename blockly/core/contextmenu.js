@@ -222,8 +222,9 @@ Blockly.ContextMenu.blockDeleteOption = function(block) {
     descendantCount -= nextBlock.getDescendants(true).length;
   }
   var deleteOption = {
-    text: descendantCount == 1 ? Blockly.Msg.DELETE_BLOCK :
-        Blockly.Msg.DELETE_X_BLOCKS.replace('%1', String(descendantCount)),
+    // text: descendantCount == 1 ? Blockly.Msg.DELETE_BLOCK :
+    //     Blockly.Msg.DELETE_X_BLOCKS.replace('%1', String(descendantCount)),
+    text: Blockly.Msg.DELETE_BLOCK,
     enabled: true,
     callback: function() {
       Blockly.Events.setGroup(true);
