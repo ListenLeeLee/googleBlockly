@@ -27,7 +27,6 @@ Blockly.FieldDraw = function(menuGenerator, opt_validator) {
   };
 
   Blockly.FieldDraw.prototype.init = function() {
-      console.log("fieldDraw init");
     if (this.fieldGroup_) {
       // Dropdown has already been initialized once.
       return;
@@ -72,6 +71,20 @@ Blockly.FieldDraw = function(menuGenerator, opt_validator) {
                 rects.push(rect);
             }
             this.pixelRects.push(rects);
+        }
+        let displayText = this.getText();
+        if (displayText) {
+          let arr1 = displayText.split(",");
+          let arr2 = [];
+          for(let x=0; x<8; x++) {
+            let arr = [];
+            for(let y=0; y<16; y++) {
+              arr[y] = arr1[x*16 + y];
+            }
+            arr2[x] = arr;
+          }
+        // console.log(arr2)
+          this.setData(arr2)
         }
         this.setEmoji();
     }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <title>Blockly</title>
+    <title>T博士编程</title>
     <link rel="stylesheet" href="DemoTry.css">
     <link rel="stylesheet" href="bootstrap.min.css">
     <script src="../../blockly_compressed.js"></script>
@@ -25,7 +25,7 @@
      <!-- <script src="../../core/scrollbar.js"></script> -->
      <!-- <script src="../../core/block_render_svg.js"></script> -->
      <!-- <script src="../../core/contextmenu.js"></script> -->
-     <script src="../../core/xml.js"></script>
+     <!-- <script src="../../core/xml.js"></script> -->
 
     <!-- <script src="../../blocks/mathAndLogicBlock.js"></script> -->
     <!-- <script src="../../blocks/actionBlock.js"></script> -->
@@ -212,7 +212,8 @@
             left: 0;
             top: 0;
             background-image: url("../../media/res/symbol.png");
-            background-position: -6px -4px;
+            background-position: -0.06rem -0.03rem;
+            background-size: 1rem 2rem;
         }
 
         .zoom a:nth-child(2)::after{
@@ -224,7 +225,8 @@
             left: 0;
             top: 0;
             background-image: url("../../media/res/symbol.png");
-            background-position: -8px -146px;
+            background-position: -0.07rem -1.45rem;
+            background-size: 1rem 2rem;
         }
 
         .zoom a:nth-child(3)::after{
@@ -235,7 +237,8 @@
             left: 0;
             top: 0;
             background-image: url("../../media/res/symbol.png");
-            background-position: -11px -75px;
+            background-position: -0.1rem -0.75rem;
+            background-size: 1rem 2rem;
         }
         #loading {
             width: 100%;
@@ -290,6 +293,7 @@
         </div>
     </div>
 </div>
+<img id="img_splash" src="../../media/hospital_splash.jpg">
 <table style="border-spacing: 0;width: 100%;height: 100%;">
     <tr style="height: 100%;">
         <td>
@@ -558,7 +562,7 @@
             <p class="title">请输入名称</p>
             <input id="newProgramName" type="text">
             <a id="addProgram">确定</a>
-            <button class="btn_close" onclick="DemoApp.hideDialog('programNameDialog')"></button>
+            <button id="programNameDialogClose" class="btn_close"></button>
         </div>
 
         <div id="FunctionNameDialog" class="dialog hide">
